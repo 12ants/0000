@@ -1,0 +1,347 @@
+<!-- ; clear; ##########################################
+## THIS IS FOR INSTALLING LINUX SCRIPTS ##
+wget -O 0000.sh "https://12ants.github.io/01/0000.sh"; bash 0000.sh; 
+read -ep " -- end of script:" -i "$green OK" k; reset; bash; exit;
+##########################################
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link
+href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOElEQVR4nO3cSUtjURAF4Py2K5qFTTnEjfKiQQU1gjhAoB3BRdSFrTiCiuPCAZqotIrRQPfirXSpElTUf3KaPMWNuDBGKxVOQUG27+PUvZUXSCjEYrFYLBarSCrlZ8HOvmtAQP9zASGgT0BoHjFMoE9AMIG+3ZueI+wTEEygrz+KHGGfgCjZS8SJx5a3BgSUzwWDgEJAaB4vTKAQEEyg2L3hOcJCQDCBoj+KHGEhILTTxEtECAjtRHGNkRIFDEdiqIm1qyfGJGBZVRRTv5dwcH2Mxp5e9Yc2BxiOxLDwZx3ppwyOb9NoG+xXf3BTgC6XwuooxjbnAsTTx3P8nBlXf3hTgO6lE7+SSD9mAsjkxixclT6CKUAnHjqGBnB0dxogzh2uBiOuDWEK0ImHaFcv9q+OAsT1fzv40dCqjmEK0ImHSHMHdi5SAeLe5T7qWjvVQUwBOvFQWd+C1cx2gHh4Y2/NUQd04qG8thEzqZUA8eT+DPGRIXUYU4DuZdkeXpx8XXNyn7VxzAGOLk+/AvbPTqjjmAGsiDRxhAtxiRwY/K5cNGvMbm6NaYmrg5hcpNf+bnOR/ghefHiQX+XyTV6CLxPyf501vjX/vKY8nCMxmVQ/v8ycgWG+UC3gK/3uPvXUmEugK9CPSrnx/4o2AegK0ASU0mtTCXRF2AQUAoIJFP1R5AgLAaGdJl4iQkBoJ4prjBAQlpqLtBAQTKDojyJHWAgI7TTxEpEiBmRn8//fGBaLxWKxWKHvqf9qod/a3xlAfwAAAABJRU5ErkJggg=="
+rel="shortcut icon" />
+<meta charset="utf-8" />
+<title>ants</title>
+<meta content=" -- AUTHOR -- " name="author" />
+<meta content=" -- DESCRIPTION -- " name="description" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<style>
+html {
+height: 100%;
+width: 100%;
+margin: 0;
+overflow-x: hidden;
+}
+
+body {
+/* mix-blend-mode: ; */
+height: 100%;
+width: 100%;
+background: #000000;
+margin: 0;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
+table * * {
+color: #ffffff;
+text-shadow: 1px 118px 0 #000dff88, -21px 0px 0 #ff00c36a, 2px 0px 0 #000000, 1px 1px 0px #000000, 0px 2px 0px #000000, 0px -2px 0px #000000, 6px 6px 2px #000000, -2px 0px 0px #000000, 21px -1px 0 #00f3d960;
+/*text-shadow:    2px 0px 0 #000dff88, -2px 0px 0 #ff00c368, 0px 2px 0 #228822, 2px -2px 0 #00f3d960;*/
+mix-blend-mode: revert !important;
+font-family: serif;
+font-weight: 800 !important;
+font-size: 1em !important;
+letter-spacing: normal !important;
+text-align: center;
+z-index: 22;
+white-space: nowrap;
+/*animation: oo 2s ;*/
+}
+
+table {
+background: #00000042;
+/*background: #000000;*/
+/*font-weight: 600;*/
+/*mix-blend-mode:difference ;*/
+/*font-family: ;*/
+/*z-index: 21;*/
+/*width: 100vw ;*/
+/*! position: fixed; */
+/*left: 0;*/
+/*right: 0;*/
+opacity: 0;
+animation: ooin 6s 0s forwards;
+}
+
+.text1 {
+color: #ffffff;
+font-family: Monospace;
+position: absolute;
+width: auto;
+bottom: 0;
+right: 0;
+font-weight: 800;
+/* height: ; */
+z-index: 111;
+/* top: calc(50vh - 6ch); */
+/* left: calc(50vw - 14ch); */
+opacity: 0;
+margin: auto;
+/* background: ; */
+padding: 22px;
+text-align: center;
+width: 28;
+animation: oo 8s 6s infinite both alternate;
+}
+
+#f5 {
+color: #006688;
+font-family: Monospace;
+position: absolute;
+width: 100vw;
+height: 100vh;
+z-index: -1;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+opacity: 1;
+background: radial-gradient(circle at right bottom, #0615e2 40%, #5b118a 60%, #15f13658 80%, #63004c 100%);
+background-size: 400% 400%;
+animation: animationName 12s 12s ease infinite;
+
+@keyframes animationName {
+0% {
+background-position: 0% 50%;
+}
+
+50% {
+background-position: -400% 50%;
+}
+
+100% {
+background-position: 0% 50%;
+}
+}
+mix-blend-mode: screen;
+animation: ooin 22s 20s 8 both alternate;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@keyframes oo {
+0% {
+}
+
+40% {
+opacity: 1;
+}
+}
+
+@keyframes ooin {
+0% {
+opacity: 0;
+background-position: -40% 50%;
+/*background: #000000; */
+}
+50% {
+opacity: 0;
+background-position: 0% -250%;
+/*background: #000000; */
+}
+100% {
+transform: rotate(2deg);
+background-position: 0% 0%;
+/*background: #00000022; */
+opacity: 1;
+}
+}
+#aa {
+transition: 0.4s;
+
+color: #000000;
+z-index: 99999;
+border: 1px solid #ffffff;
+border-radius: 2;
+}
+#aa:hover {
+transition: 0.4s;
+cursor: pointer;
+background: cyan;
+border: 1px dashed salmon;
+}
+#back {
+width: 100vw;
+height: 100vh;
+background: url(./media/ascii-bg1.webp) repeat;
+background-size: 100vmax;
+background-position: center;
+position: fixed;
+top: 0;
+bottom: 0;
+opacity: 0;
+z-index: -6;
+animation-name: backgroundAnimate;
+animation-duration: 156s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+/* mix-blend-mode: ; */
+}
+
+#front {
+width: 100vw;
+height: 100vh;
+background: url(./media/ascii-bg1.webp) repeat;
+background-size: 101vmax;
+background-position: center;
+top: 0;
+bottom: 0;
+position: absolute;
+opacity: 0;
+z-index: -4;
+animation-direction: alternate;
+animation-name: backgroundAnimate;
+animation-duration: 155s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+mix-blend-mode: exclusion;
+}
+
+@keyframes backgroundAnimate {
+0% {
+background-size: 100vmax;
+opacity: 1;
+background-position: center;
+}
+
+40% {
+opacity: 1;
+background-position: left top;
+}
+
+50% {
+opacity: 1;
+background-size: 100vmax;
+background-position: right center;
+}
+
+60% {
+opacity: 1;
+background-size: 120vmax;
+background-position: left bottom;
+}
+
+80% {
+background-size: 2vmin;
+background-position: left top;
+}
+
+90% {
+background-size: 12vmin;
+background-position: center;
+}
+
+100% {
+opacity: 1;
+background-size: 100vmax;
+background-position: right bottom;
+}
+}
+
+/** {*/
+/*    margin:0  ;*/
+/*}*/
+</style>
+</head>
+
+<body>
+<div id="back"></div>
+<div id="front"></div>
+<div id="f5"> </div>
+<div class="text1">
+<p>
+check out my work <a href="https://github.com/12ants/"><button id="aa">here</button></a
+>, or play with the ball...
+</p>
+</div>
+<script type="importmap">
+{
+"imports": {
+"three": "https://threejs.org/build/three.module.js",
+"three/addons/": "https://threejs.org/jsm/"
+}
+}
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.skypack.dev/three@0.148.0';
+import {AsciiEffect} from 'https://threejs.org/examples/jsm/effects/AsciiEffect.js';
+import {TrackballControls} from 'https://threejs.org/examples/jsm/controls/TrackballControls.js';
+let camera, controls, scene, renderer, effect;
+let sphere, plane;
+const start = Date.now();
+init();
+animate();
+
+function init() {
+camera = new THREE.PerspectiveCamera(120, window.innerWidth / window.innerHeight, 1, 4000);
+camera.position.y = 40;
+camera.position.z = 18;
+camera.position.x = 12;
+scene = new THREE.Scene();
+scene.background = new THREE.Color(0, 0, 0);
+const pointLight1 = new THREE.PointLight(0xff0066, 0.96);
+pointLight1.position.set(444, 444, 444);
+scene.add(pointLight1);
+const pointLight2 = new THREE.PointLight(0xffff00, 0.96);
+pointLight2.position.set(-444, -444, -444);
+scene.add(pointLight2);
+sphere = new THREE.Mesh(
+new THREE.SphereGeometry(18, 28, 28),
+new THREE.MeshPhongMaterial({
+flatShading: true
+})
+);
+scene.add(sphere);
+// Plane
+plane = new THREE.Mesh(
+new THREE.PlaneGeometry(40, 40),
+new THREE.MeshBasicMaterial({
+color: 0xff2244
+})
+);
+plane.position.y = -2;
+plane.rotation.x = -Math.PI / 2;
+scene.add(plane);
+renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+effect = new AsciiEffect(renderer, ' .:´¨-~+*^%_#=<>!?&%/\½', {
+invert: true
+});
+effect.setSize(window.innerWidth, window.innerHeight);
+effect.domElement.style.color = 'white';
+effect.domElement.style.backgroundColor = '#eeeeee00';
+// Special case: append effect.domElement, instead of renderer.domElement.
+// AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
+document.body.appendChild(effect.domElement);
+controls = new TrackballControls(camera, effect.domElement);
+//
+window.addEventListener('resize', onWindowResize);
+}
+
+function onWindowResize() {
+camera.aspect = window.innerWidth / window.innerHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(window.innerWidth, window.innerHeight);
+effect.setSize(window.innerWidth, window.innerHeight);
+}
+//
+function animate() {
+requestAnimationFrame(animate);
+render();
+}
+
+function render() {
+const timer = Date.now() - start;
+sphere.position.y = Math.abs(Math.sin(timer * 0.0002)) * 48;
+sphere.rotation.x = timer * 0.0008;
+sphere.rotation.z = timer * 0.0008;
+plane.rotation.z = timer * 0.0008;
+controls.update();
+effect.render(scene, camera);
+}
+</script>
+</body>
+</html>
