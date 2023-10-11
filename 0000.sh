@@ -31,7 +31,7 @@ apt update && apt install gum -y;
 curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
 else echo "OK"; fi; cd $inst;
 ## b00b - Done //
-
+gum file ./
 
 
 
