@@ -14,13 +14,12 @@ GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 GRUB_TIMEOUT_STYLE=menu
 GRUB_TIMEOUT=6
-GRUB_DISTRIBUTOR=`lsb_release -a -s 2> /dev/null || echo Debian`
+GRUB_DISTRIBUTOR=`lsb_release -as 2> /dev/null || echo Debian`
 GRUB_DISABLE_OS_PROBER=false
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_CMDLINE_LINUX="console" 
 GRUB_CMDLINE_LINUX_DEFAULT="console" 
 '>etc/default/grub; 
 update-grub; 
-echo -e "$re  \n\n\n\n --$blink GRUB INSTALLED SUCCESSFULLY \n" $re; sleep 2;
+echo -e "$re  \n\n\n\n --$pink GRUB INSTALLED SUCCESSFULLY \n" $re; sleep 2;
 echo -e " $cyan ####################################\n  ####$re -All done! $cyan ###################\n  ####################################\n\n"; sleep 2;
-# GRUB_GFXMODE= (Example: GRUB_GFXMODE=800x600)
