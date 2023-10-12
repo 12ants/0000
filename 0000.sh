@@ -18,28 +18,30 @@ grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput se
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2="$cyan --$re";
 
-
 echo -e "\n\n\n\n\t -- 0000_bash_improvements... \n\n\n\n\n\n\n"; tput sgr0;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;
 read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a"; #AAAA
 #b00a
 if [ $b00a == y ]; then echo "Making bash better...";
-apt -y install git;
-git clone https://github.com/12ants/0000; cd 0000; pwd;
-
+cd /home/$SUDO_USER/
+apt -y install git; git clone https://github.com/12ants/0000;
+cd 0000/
 ##
 ## Create Backup folder
-mkdir -p ./01/backups/ -m 775;
-bufolder="./01/backups/";
-chown $SUDO_USER: $bufolder;##
+mkdir -p backups/ -m 775;
+bufolder="/home/$SUDO_USER/0000/backups/";
+chown $SUDO_USER: $bufolder;
 ## Create Install folder
-mkdir -p ./01/01installs/ -m 775;
-inst="./01/installs/";
+mkdir -p /home/$SUDO_USER/0000/ -m 775;
+inst="/home/$SUDO_USER/0000/";
 chown $SUDO_USER: $inst;
-
-
-cp etc/bash.bashrc /etc/; rm /root/.bashrc; rm /home/$SUDO_USER/.bashrc; ##replace regular bash-promptfile
+##
+##
+cp etc/bash.bashrc /etc/; rm /root/.bashrc;
+rm /home/$SUDO_USER/.bashrc; ##replace regular bash-promptfile
 cp etc/balias /etc/
+##
+##
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer; echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/ants; ##relax admin pass
 else echo "OK"; fi; cd $inst;
 ## b00a - Done //
