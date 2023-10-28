@@ -78,8 +78,16 @@ micro -plugin install filemanager fish manipulator jump lsp wc editorconfig ;
 # echo 'alias mm=micro' >> /etc/bash.bashrc
 cp etc/micro_bindings.json "/home/$SUDO_USER/.config/micro/bindings.json" -b 
 cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
-
-
+##
+##
+##
+##
+read -ep "$c2 Install COPYQ? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 No$re - OK";else 
+sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq; echo COPYQ INSTALLED; fi
+##
+##
+##
+##
 ## b00b - Done //
 gum file ./
 
