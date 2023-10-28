@@ -82,7 +82,7 @@ cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
 ##
 ##
 ##
-read -ep "$c2 Install COPYQ? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 No$re - OK";else 
+pspace; read -ep "$c2 Install COPYQ? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 No$re - OK";else 
 sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq; echo COPYQ INSTALLED; fi
 ##
 ##
