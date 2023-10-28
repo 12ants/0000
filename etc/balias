@@ -14,6 +14,7 @@ alias "mmbinds"='micro /home/$USER/.config/micro/bindings.json'
 
 alias "files"='cd /home/files/htdocs/files.12ants.com/files/ -b; chown files: "/home/afiles/htdocs/files.12ants.com/files/* -R; "'
 
+alias pspace='echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;'
 
 alias portsopen='echo -e " $(tput smso) " ; ss -rnpf inet'
 alias ports='echo -e "\n\n   $cyan-$re Open ports on local network"$cyan" -"$re" \n";
