@@ -42,7 +42,8 @@ rm /home/$SUDO_USER/.bashrc; ##replace regular bash-promptfile
 cp etc/balias /etc/
 ##
 ##
-echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer; echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/ants; ##relax admin pass
+echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
+echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/ants; ##relax admin pass
 else echo "OK"; fi; cd $inst;
 ## b00a - Done //
 ##
@@ -60,28 +61,16 @@ ln /usr/games/fortune /bin/;
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-apt update && apt install gum -y;
+apt update && apt install gum melt -y;
 curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
-
-
-# Debian/Ubuntu
-# melt store ssh pp
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install melt
-
-
 
 
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
+apt update
 apt install -y sss duf broot 
 
-
-
 else echo "OK"; fi; cd $inst;
-
 
 # micro
 sudo apt install -y micro
