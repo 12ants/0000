@@ -82,12 +82,28 @@ cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
 ##
 ##
 ##
-pspace; read -ep "$c2 Install COPYQ? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 No$re - OK";else 
-sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq; echo COPYQ INSTALLED; fi
+infile=copyq
+pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq;
+echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ##
 ##
 ##
+infile=walk
+pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+snap install walk
+echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
+##
+##
+infile=cloudflare-ddns
+pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+git clone https://github.com/timothymiller/cloudflare-ddns.git; cd cloudflare-ddns;
+wget -O config.json https://gist.githubusercontent.com/12ants/f6482661b0256e395f8c690c35e85467/raw/2eabc94e0d5335db147ac858f0f05aedcae46db8/gistfile1.txt; cd ..;
+echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
+
+
+
 ## b00b - Done //
 gum file ./
 
