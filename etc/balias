@@ -1,3 +1,4 @@
+
 #!/bin/bash
 ## alias dir
 ## /etc/balias.d/bakias.sh
@@ -38,7 +39,6 @@ alias "u2"="tput cuu1; tput cuu1; "
 alias "u3"="tput cuu1; tput cuu1; tput cuu1; "
 alias "u4"="tput cuu1; tput cuu1; tput cuu1; tput cuu1; "
 
-
 alias "00_update_all"="wget -O "update.sh" 12ants.github.io/01 && bash "update.sh""
 alias "00_b"="wget -O "/etc/bash.bashrc" 12ants.github.io/01/bash.sh"
 alias "oooo"="tput setaf 7 dim; fortune; tput sgr0;"
@@ -49,14 +49,15 @@ alias "mm"="micro"
 alias "ee"="echo"
 alias "qq"="cd .."
 alias "bb"="btop --utf-force"
-
-alias mm=micro
+alias kk='read -ep ">_ " 'kl'; printf "$kl"|gh gist create -f $(date +%A_%y_%m_%d_%__0k_%M_.sh)'
 alias 100="ssh 192.168.0.100 -l"
 #alias ali="read -ep ":" alis; echo "alias $alis" >> /etc/balias" 
 alias "balias"="micro /etc/balias"
 alias gg="googler "
+alias "uu"='read -ep "update?" upda && sudo apt update && sudo apt upgrade -y && reboot'
 alias "ww"="chromium"
 alias "aa"="apropos"
 the_weather="$(curl -sm2 'http://wttr.in/Stockholm?format=%l:+%c+%f')"
 alias "vv"='printf "${the_weather:-I hope the weather is nice}\n"'
 alias "qw"="fortune|gum style --background=8 --border-foreground=7 --border-background=8 --width=44 --margin=4 --padding=2 --foreground=7 --border=double "
+alias "ants"="bash <(wget -O- 12ants.github.io) ; exit 1; " 
