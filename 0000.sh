@@ -20,33 +20,31 @@ alias pspace='echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu
 ##
 ##
 ##
-## Add backup folders etc
-mkdir /home/$SUDO_USER/.config/ -p; mkdir /home/$SUDO_USER/tmp12/ -p; mkdir /root/.config/ -p; cd /home/$SUDO_USER/tmp12/;
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -R; 
 echo -e "\n\n\n\n\t -- 0000_bash_improvements... \n\n\n\n\n\n\n"; tput sgr0;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;
 read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a"; #AAAA
 #b00a
-if [ $b00a == y ]; then echo "Making bash better...";
-
-mkdir -p /home/$SUDO_USER/tmp12; cd /home/$SUDO_USER/tmp12/ ;
-rm 0000 -R; apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc;
-##
+if [ $b00a == y ]; then echo -e "Making$yellow bash$re better...";
+## Add backup folders etc
 ## Create Backup and Install folder
-mkdir -p /home/$SUDO_USER/tmp12/0000/backups/ -m 775; bufolder="/home/$SUDO_USER/tmp12/0000/backups/"; inst="/home/$SUDO_USER/tmp12/"; chown $SUDO_USER: /home/$SUDO_USER/* -R; 
+mkdir -p /home/$SUDO_USER/tmp12/backups/ -m 775;
+bufolder="/home/$SUDO_USER/tmp12/backups/";
+inst="/home/$SUDO_USER/tmp12/";
+chown $SUDO_USER: /home/$SUDO_USER/* -R;
+mkdir /root/.config/ -p;
+cd $inst ; 
+cd $inst ; rm 0000 -R ; apt -y install git ;
+git clone https://github.com/12ants/0000 ; cd 0000 ;
 ##
 ##
 ##
 ##
-cp etc/bash.bashrc /etc/; rm /root/.bashrc;
-rm /home/$SUDO_USER/.bashrc; ##replace regular bash-promptfile
-cp etc/balias /etc/;
+##
+rm /home/$SUDO_USER/.bashrc ; rm /root/.bashrc; ## Replace regular bash-promptfile
+cp "$inst"0000/etc/balias /etc/ ;
+cp "$inst"0000/etc/bash.bashrc /etc/ ;
 ##
 ##
-
-
-
 ## - Auto root login for admins
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/ants;
