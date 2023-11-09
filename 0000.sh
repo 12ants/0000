@@ -8,7 +8,7 @@ if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try c
 ##
 ## - Autrestart as needed
 sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; 
-apt update; apt -y upgrade;
+apt update; apt -y upgrade; clear;
 ##
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -29,19 +29,19 @@ read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a";
 #b00a
 if [ $b00a == y ]; then echo "Making bash better...";
 
+mkdir -p /home/$SUDO_USER/tmp12; cd /home/$SUDO_USER/tmp12/ ;
+apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
+sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc;
 ##
 ## Create Backup and Install folder
 mkdir -p /home/$SUDO_USER/tmp12/0000/backups/ -m 775; bufolder="/home/$SUDO_USER/tmp12/0000/backups/"; inst="/home/$SUDO_USER/tmp12/"; chown $SUDO_USER: /home/$SUDO_USER/* -R; 
 ##
 ##
-cd /home/$SUDO_USER/tmp12/ ;
-apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc;
 ##
 ##
 cp etc/bash.bashrc /etc/; rm /root/.bashrc;
 rm /home/$SUDO_USER/.bashrc; ##replace regular bash-promptfile
-cp etc/balias /etc/; bash;
+cp etc/balias /etc/;
 ##
 ##
 
