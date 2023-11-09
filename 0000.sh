@@ -30,7 +30,7 @@ read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a";
 if [ $b00a == y ]; then echo "Making bash better...";
 
 mkdir -p /home/$SUDO_USER/tmp12; cd /home/$SUDO_USER/tmp12/ ;
-apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
+rm 0000 -R; apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
 sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc;
 ##
 ## Create Backup and Install folder
