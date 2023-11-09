@@ -7,7 +7,8 @@ if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try c
 ##
 ##
 ## - Autrestart as needed
-sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf
+sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; 
+apt update; apt -y upgrade;
 ##
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -27,19 +28,15 @@ tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;
 read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a"; #AAAA
 #b00a
 if [ $b00a == y ]; then echo "Making bash better...";
-apt update; apt -y upgrade;
-cd /home/$SUDO_USER/tmp12;
-apt -y install git; git clone https://github.com/12ants/0000;
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; cd 0000;
+
 ##
-## Create Backup folder
-mkdir -p backups/ -m 775;
-bufolder="/home/$SUDO_USER/tmp12/0000/backups/";
-chown $SUDO_USER: $bufolder;
-## Create Install folder
-mkdir -p /home/$SUDO_USER/tmp12/ -m 775;
-inst="/home/$SUDO_USER/tmp12/";
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; 
+## Create Backup and Install folder
+mkdir -p /home/$SUDO_USER/tmp12/0000/backups/ -m 775; bufolder="/home/$SUDO_USER/tmp12/0000/backups/"; inst="/home/$SUDO_USER/tmp12/"; chown $SUDO_USER: /home/$SUDO_USER/* -R; 
+##
+##
+cd /home/$SUDO_USER/tmp12/ ;
+apt -y install git; git clone https://github.com/12ants/0000; cd 0000;
+sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc;
 ##
 ##
 cp etc/bash.bashrc /etc/; rm /root/.bashrc;
@@ -126,9 +123,14 @@ pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "
 git clone https://github.com/timothymiller/cloudflare-ddns.git; cd cloudflare-ddns;
 wget -O config.json https://gist.githubusercontent.com/12ants/f6482661b0256e395f8c690c35e85467/raw/2eabc94e0d5335db147ac858f0f05aedcae46db8/gistfile1.txt; cd ..;
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
-
-
-
+##
+##
+##
+## Get github gpg -- TODO ------
+wget -O /home/$SUDO_USER/.ssh/hosts.yml https://gist.githubusercontent.com/12ants/d1a876de077be143770966eb7dc83666/raw/812d50f20d28ade7b9f8721e60d9c2bb9ee60734/hosts.yml;
+sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; cd $inst;
+##
+##
 ## b00b - Done //
 gum file ./
 
