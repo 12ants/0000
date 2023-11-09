@@ -30,7 +30,7 @@ if [ $b00a == y ]; then echo "Making bash better...";
 apt update; apt -y upgrade;
 cd /home/$SUDO_USER/tmp12;
 apt -y install git; git clone https://github.com/12ants/0000;
-cd 0000/
+sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; cd 0000;
 ##
 ## Create Backup folder
 mkdir -p backups/ -m 775;
