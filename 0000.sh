@@ -20,7 +20,7 @@ redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2="$cyan --$re";
-pspace="echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;" ; 
+pspace=""echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1 ; ""  
 ##
 ##
 ##
@@ -46,6 +46,8 @@ cd $inst ; rm 0000 -R ;
 git clone https://github.com/12ants/0000 ; 
 cp ./0000/config/* -r /home/$SUDO_USER/.config/ -r ;
 chown $SUDO_USER: /home/$SUDO_USER/* -R;
+wget -O gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt";
+gh auth login --with-token < gh_auth.txt ;
 gh auth status;
 ##
 fi 
