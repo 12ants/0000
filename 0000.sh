@@ -2,11 +2,11 @@
 ## BASH-IMPORVEMENTS                                ##  --  by 12ants.github.io  --  ##
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
-## auto-install-cmd  >>  >>  wget -Oants.sh 12ants.gihub.io; bash ants.sh;
+## auto-install-cmd  >>  >>  wget -Oants 12ants.gihub.io; bash ants;
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi
 ##
 ##
-## - Autrestart as needed
+## Autorestart as needed
 sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; 
 apt update; apt -y upgrade; clear;
 ##
@@ -16,7 +16,7 @@ redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2="$cyan --$re";
-alias pspace='echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;'
+pspace='echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;' ; 
 ##
 ##
 ##
@@ -30,11 +30,24 @@ if [ $b00a == y ]; then echo -e "Making$yellow bash$re better...";
 mkdir -p /home/$SUDO_USER/tmp12/backups/ -m 775;
 bufolder="/home/$SUDO_USER/tmp12/backups/";
 inst="/home/$SUDO_USER/tmp12/";
-chown $SUDO_USER: /home/$SUDO_USER/* -R;
+mkdir /home/$SUDO_USER/.config/ -p;
 mkdir /root/.config/ -p;
-cd $inst ; 
-cd $inst ; rm 0000 -R ; apt -y install git ;
-git clone https://github.com/12ants/0000 ; cd 0000 ;
+##
+## 
+infile=Github; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+##
+apt -y install git gh;
+chown $SUDO_USER: /home/$SUDO_USER/* -R;
+cd $inst ; rm 0000 -R ;
+git clone https://github.com/12ants/0000 ; 
+cp ./0000/config/* -r /home/$SUDO_USER/.config/ -r ;
+chown $SUDO_USER: /home/$SUDO_USER/* -R;
+gh auth status;
+##
+fi 
+##
+##
+
 ##
 ##
 ##
@@ -66,7 +79,7 @@ ln /usr/games/fortune /bin/;
 
 
 ## Charm apps
-infile=charm; pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile=charm; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
 sudo mkdir -p /etc/apt/keyrings;
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
@@ -80,7 +93,7 @@ curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
 
 
 ## Duf & Broot - Apps install
-infile=duf_broot; pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile=duf_broot; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list;
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg;
@@ -90,7 +103,7 @@ fi
 else echo "OK"; fi; cd $inst;
 
 # micro
-infile=micro; pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ## 
 sudo apt -y install micro;
 micro -plugin install filemanager fish manipulator jump lsp wc editorconfig ;
@@ -103,7 +116,7 @@ echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi # -- INSTALLER COMPLETED -
 ##
 ##
 infile=copyq
-pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq;
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
@@ -111,13 +124,13 @@ echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ##
 infile=walk
-pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 snap install walk
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ##
 infile=cloudflare-ddns
-pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 git clone https://github.com/timothymiller/cloudflare-ddns.git; cd cloudflare-ddns;
 wget -O config.json https://gist.githubusercontent.com/12ants/f6482661b0256e395f8c690c35e85467/raw/2eabc94e0d5335db147ac858f0f05aedcae46db8/gistfile1.txt; cd ..;
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
