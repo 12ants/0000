@@ -1,8 +1,12 @@
 #!/bin/bash
-## BASH-IMPORVEMENTS                                ##  --  by 12ants.github.io  --  ##
-## Install-script for Ubuntu/Debian systems
-## visit https://12ants.github.io for credits
-## auto-install-cmd  >>  >>  wget -Oants 12ants.gihub.io; bash ants;
+## 
+##   Install-script for Ubuntu/Debian systems -- BASH-IMPORVEMENTS 
+##   By leonel @ https://12ants.github.io
+##
+##      =================================
+##      wget -OO 12ants.github.io; bash O
+##      =================================
+##
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi
 ##
 ##
