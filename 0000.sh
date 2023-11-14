@@ -23,7 +23,7 @@ left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2=
 pspace=""echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1 ; ""  
 ##
 ##
-##
+####
 echo -e "\n\n\n\n\t -- 0000_bash_improvements... \n\n\n\n\n\n\n"; tput sgr0;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;
 read -ep "         -- Make bash a little better? $(tput setaf 2)" -i "y" "b00a"; #AAAA
