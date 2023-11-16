@@ -1,18 +1,20 @@
 #!/bin/bash
 ## 
-##   Install-script for Ubuntu/Debian systems -- BASH-IMPORVEMENTS 
-##   By leonel @ https://12ants.github.io
-##
 ##      =================================
 ##      wget -OO 12ants.github.io; bash O
 ##      =================================
+##
+##      BASH-IMPORVEMENTS Install-script for
+##      Ubuntu/Debian systems by -- 12ants.github.io
+##
 ##
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi
 ##
 ##
 ## Autorestart as needed
 sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; 
-apt update; apt -y upgrade; clear;
+snap install lolcat;
+apt update|lolcat -a -F .001 -s 111 -p 11 -d 22; apt upgrade -y --install-recommends|lolcat -a -F .001 -s 111 -p 11 -d 22;
 ##
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -79,11 +81,10 @@ read -ep "         -- Install essential apps? $(tput setaf 2)" -i "y" "b00b"; #B
 #BBBB
 if [ $b00b == y ]; then echo "Make it so...";
 apt update; apt upgrade -y;
-apt -y install ssh openssh-server openssl curl wget dnsutils htop nano googler;
-apt -y install w3m btop mc neofetch googler lolcat pv gh git fortune tmux nnn;
-ln /usr/games/fortune /bin/;
 
-
+apt -y install ssh openssh-server openssl curl wget dnsutils htop nano googler|lolcat -a -F .001 -s 111 -p 11 -d 22;
+tput cup 0; apt -y install w3m btop mc neofetch googler lolcat pv gh git fortune tmux nnn|lolcat -a -F .01 -s 2111 -p 111 -d 122;
+ln /usr/games/fortune /bin/; seq -s '@' 2222|lolcat -a -F .01 -s 11 -p 11; tput cup 1;
 ## Charm apps
 infile=charm; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
@@ -92,7 +93,6 @@ curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/ke
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 apt update && apt -y install gum melt;
 fi
-
 ## FM - filemanager
 curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
 ##
@@ -145,11 +145,12 @@ echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ## Get github gpg -- TODO ------
 wget -O /home/$SUDO_USER/.ssh/hosts.yml https://gist.githubusercontent.com/12ants/d1a876de077be143770966eb7dc83666/raw/812d50f20d28ade7b9f8721e60d9c2bb9ee60734/hosts.yml;
-sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; cd $inst;
+sudo chown $SUDO_USER: /home/$SUDO_USER/* -Rc; cd $inst; seq -s '@' 2222|lolcat -a -F .01 -s 11 -p 1; clear;
 ##
 ##
 ## b00b - Done //
 gum file ./
 
+seq -s '@' 2222|lolcat -a -F .01 -s 11 -p 11
 
 
