@@ -24,6 +24,9 @@ cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2="$cyan --$re";
 pspace=""echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1 ; ""  
 ##
+export own="chown "$SUDO_USER": /home/"$SUDO_USER" -R";
+##
+##
 ##
 ####
 echo -e "\n\n\n\n\t -- 0000_bash_improvements... \n\n\n\n\n\n\n"; tput sgr0;
@@ -38,19 +41,25 @@ bufolder="/home/$SUDO_USER/tmp12/backups/";
 inst="/home/$SUDO_USER/tmp12/";
 mkdir /home/$SUDO_USER/.config/ -p;
 mkdir /root/.config/ -p;
+$own ; cd $inst; rm 0000 -R;
+git clone https://github.com/12ants/0000; cd 0000; tput setaf 6; pwd; sleep 1; $own
 ##
 ## 
-infile=Github; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+
+
+
+
+
+infile=Github; $pspace; read -n1 -ep "$c2 Install $infile? "$dim"["$re$bold" Y "$dim"/"$re$bold" n "$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
 apt -y install git gh;
-chown $SUDO_USER: /home/$SUDO_USER/* -R;
-cd $inst ; rm 0000 -R ;
+$own ; cd $inst ; rm 0000 -R ;
 git clone https://github.com/12ants/0000 ; 
 cp ./0000/config/* -r /home/$SUDO_USER/.config/ -r ;
 chown $SUDO_USER: /home/$SUDO_USER/* -R;
+##
 wget -O gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt";
-gh auth login --with-token < gh_auth.txt ;
-gh auth status;
+gh auth login --with-token < gh_auth.txt; gh auth status; 
 ##
 fi 
 ##
@@ -62,7 +71,7 @@ fi
 ##
 ##
 rm /home/$SUDO_USER/.bashrc ; rm /root/.bashrc; ## Replace regular bash-promptfile
-cp "$inst"0000/etc/balias /etc/ ;
+cp "$inst"0000/etc/balias /etc/balias.sh ;
 cp "$inst"0000/etc/bash.bashrc /etc/ ;
 ##
 ##
