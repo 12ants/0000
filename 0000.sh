@@ -1,5 +1,5 @@
 #!/bin/bash
-## 
+##  
 ##      =================================
 ##      wget -OO 12ants.github.io; bash O
 ##      =================================
@@ -12,9 +12,9 @@ if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try c
 ##
 ##
 ## Autorestart as needed
-sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; 
+sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; clear;
 snap install lolcat;
-apt update|lolcat -a -F .001 -s 111 -p 11 -d 22; apt upgrade -y --install-recommends|lolcat -a -F .001 -s 111 -p 11 -d 22;
+apt update|lolcat -a -F .01 -s 111 -p 11 -d 22; apt upgrade -y --install-recommends|lolcat -a -F .001 -s 111 -p 11 -d 22;
 ##
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -22,9 +22,10 @@ redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ----------------"; clear; echo ; c2="$cyan --$re";
-pspace=""echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1 ; ""  
+pspace='"echo -e "\n\n\n\n\t\n\n\n\n\n\n\n"; tput sgr0; tput cuu1; tput cuu1; "tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1 ; "'
 ##
 export own="chown "$SUDO_USER": /home/"$SUDO_USER" -R";
+
 ##
 ##
 ##
@@ -41,6 +42,7 @@ bufolder="/home/$SUDO_USER/tmp12/backups/";
 inst="/home/$SUDO_USER/tmp12/";
 mkdir /home/$SUDO_USER/.config/ -p;
 mkdir /root/.config/ -p;
+mkdir -p -m 775 /etc/ants12; 
 $own ; cd $inst; rm 0000 -R;
 git clone https://github.com/12ants/0000; cd 0000; tput setaf 6; pwd; sleep 1; $own
 ##

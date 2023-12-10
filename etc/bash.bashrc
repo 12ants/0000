@@ -109,9 +109,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ####
 #### Welcome screen
 ####
-duf
 greet
-qw
+neofetch
 ipa
 ## bash prompt
 PS1='\$[\[\e[92;2m\]\t\[\e[0m\]][\[\e[95m\]$(ipnet)\[\e[0m\]][\[\e[96m\]\u\[\e[0m\]][\[\e[93m\]$(pwd)\[\e[0m\]] \[\e[97;1m\]>\[\e[37;4m\]_\n\[\e[0m\]'
