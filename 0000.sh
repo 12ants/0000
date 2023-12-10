@@ -50,7 +50,7 @@ git clone https://github.com/12ants/0000; cd 0000; tput setaf 6; pwd; sleep 1; $
 
 
 
-infile=Github; $pspace; read -n1 -ep "$c2 Install $infile? "$dim"["$re$bold" Y "$dim"/"$re$bold" n "$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile="git and gh creds"; $pspace; read -n1 -ep "$c2 Install $(tput setaf )$infile? "$dim"["$re$bold" Y "$dim"/"$re$bold" n "$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
 apt -y install git gh;
 $own ; cd $inst ; rm 0000 -R ;
@@ -58,8 +58,8 @@ git clone https://github.com/12ants/0000 ;
 cp ./0000/config/* -r /home/$SUDO_USER/.config/ -r ;
 chown $SUDO_USER: /home/$SUDO_USER/* -R;
 ##
-wget -O gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt";
-gh auth login --with-token < gh_auth.txt; gh auth status; 
+wget -O /tmp/gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt";
+gh auth login --with-token < /tmp/gh_auth.txt; gh auth status; 
 ##
 fi 
 ##
@@ -108,14 +108,19 @@ curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
 
 
 ## Duf & Broot - Apps install
-infile=duf_broot; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+
+infile=sss; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
 ##
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list;
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg;
-apt update; apt -y install sss duf broot;
+apt update; apt -y install sss;
 fi
 ##
 else echo "OK"; fi; cd $inst;
+
+
+
+
 
 # micro
 infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
