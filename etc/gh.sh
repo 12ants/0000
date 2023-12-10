@@ -5,3 +5,6 @@ wget -O gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508ad
 gh auth login --with-token < gh_auth.txt; gh auth status; 
 ##
 ##
+
+
+U2FsdGVkX1+VVvPnY1bty2pvKGSKNKIJ

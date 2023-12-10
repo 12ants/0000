@@ -1,5 +1,5 @@
 #!/bin/bash
-##  
+##
 ##      =================================
 ##      wget -OO 12ants.github.io; bash O
 ##      =================================
@@ -42,28 +42,28 @@ bufolder="/home/$SUDO_USER/tmp12/backups/";
 inst="/home/$SUDO_USER/tmp12/";
 mkdir /home/$SUDO_USER/.config/ -p;
 mkdir /root/.config/ -p;
-mkdir -p -m 775 /etc/ants12; 
+mkdir -p -m 775 /etc/ants12;
 $own ; cd $inst; rm 0000 -R;
 git clone https://github.com/12ants/0000; cd 0000; tput setaf 6; pwd; sleep 1; $own
 ##
-## 
+##
 
 
 
 
 
-infile="git and gh creds"; $pspace; read -n1 -ep "$c2 Install $(tput setaf )$infile? "$dim"["$re$bold" Y "$dim"/"$re$bold" n "$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile="git and gh creds"; $pspace; read -n1 -ep "$c2 Install $(tput setaf )$infile? "$dim"["$re$bold" Y "$dim"/"$re$bold" n "$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 ##
 apt -y install git gh;
 $own ; cd $inst ; rm 0000 -R ;
-git clone https://github.com/12ants/0000 ; 
+git clone https://github.com/12ants/0000 ;
 cp ./0000/config/* -r /home/$SUDO_USER/.config/ -r ;
 chown $SUDO_USER: /home/$SUDO_USER/* -R;
 ##
 wget -O /tmp/gh_auth.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt";
-gh auth login --with-token < /tmp/gh_auth.txt; gh auth status; 
+gh auth login --with-token < /tmp/gh_auth.txt; gh auth status;
 ##
-fi 
+fi
 ##
 ##
 
@@ -72,7 +72,13 @@ fi
 ##
 ##
 ##
-rm /home/$SUDO_USER/.bashrc ; rm /root/.bashrc; ## Replace regular bash-promptfile
+## Replace regular bash-promptfile
+
+mv /home/$SUDO_USER/.bashrc /home/$SUDO_USER/.bashrc_old
+mv /root/.bashrc /root/.bashrc_old
+touch /root/.bashrc 
+
+
 cp "$inst"0000/etc/balias /etc/balias.sh ;
 cp "$inst"0000/etc/bash.bashrc /etc/ ;
 ##
@@ -97,7 +103,7 @@ apt -y install ssh openssh-server openssl curl wget dnsutils htop nano googler|l
 tput cup 0; apt -y install w3m btop mc neofetch googler lolcat pv gh git fortune tmux nnn|lolcat -a -F .01 -s 2111 -p 111 -d 122;
 ln /usr/games/fortune /bin/; seq -s '@' 2222|lolcat -a -F .01 -s 11 -p 11; tput cup 1;
 ## Charm apps
-infile=charm; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile=charm; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " -i $yn yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 ##
 sudo mkdir -p /etc/apt/keyrings;
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
@@ -111,7 +117,7 @@ curl -sfL https://raw.githubusercontent.com/mistakenelf/fm/main/install.sh | sh;
 
 ## Duf & Broot - Apps install
 
-infile=sss; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+infile=sss; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 ##
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list;
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg;
@@ -125,12 +131,12 @@ else echo "OK"; fi; cd $inst;
 
 
 # micro
-infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
-## 
+infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
+##
 sudo apt -y install micro;
 micro -plugin install filemanager fish manipulator jump lsp wc editorconfig ;
 # echo 'alias mm=micro' >> /etc/bash.bashrc
-cp etc/micro_bindings.json "/home/$SUDO_USER/.config/micro/bindings.json" -b 
+cp etc/micro_bindings.json "/home/$SUDO_USER/.config/micro/bindings.json" -b
 cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
 ##
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi # -- INSTALLER COMPLETED -- #
@@ -138,7 +144,7 @@ echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi # -- INSTALLER COMPLETED -
 ##
 ##
 infile=copyq
-$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 sudo add-apt-repository ppa:hluk/copyq; sudo apt update; sudo apt install copyq;
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
@@ -146,13 +152,13 @@ echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ##
 infile=walk
-$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 snap install walk
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
 ##
 ##
 infile=cloudflare-ddns
-$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else 
+$pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
 git clone https://github.com/timothymiller/cloudflare-ddns.git; cd cloudflare-ddns;
 wget -O config.json https://gist.githubusercontent.com/12ants/f6482661b0256e395f8c690c35e85467/raw/2eabc94e0d5335db147ac858f0f05aedcae46db8/gistfile1.txt; cd ..;
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi
