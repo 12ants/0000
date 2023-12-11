@@ -1,13 +1,12 @@
 #!/bin/bash
-##
-##      =================================
+echo '  =================================
 ##      wget -OO 12ants.github.io; bash O
 ##      =================================
 ##
 ##      BASH-IMPORVEMENTS Install-script for
 ##      Ubuntu/Debian systems by -- 12ants.github.io
-##
-##
+'
+
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi
 ##
 ##
