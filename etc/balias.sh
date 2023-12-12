@@ -89,3 +89,4 @@ alias "ali"='psp; read -ep "" -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; 
 alias "fakta"='neofetch'
 alias zzzz='ee ee 2>/dev/null'
 alias oi='echo z; sleep 1; !!'
+alias own='read -ep "		$c2 OWN$cyan /home/$SUDO_USER$re for $blue$SUDO_USER$re? " yno; chown $SUDO_USER: /home/$SUDO_USER -Rc' 
