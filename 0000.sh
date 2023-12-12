@@ -12,7 +12,7 @@ if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try c
 ##
 ## Autorestart as needed
 sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf; clear;
-snap install lolcat;
+snap install lolcat 2>/dev/null
 apt update|lolcat -a -F .01 -s 111 -p 11 -d 22; apt upgrade -y --install-recommends|lolcat -a -F .001 -s 111 -p 11 -d 22;
 ##
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
@@ -77,7 +77,7 @@ mv /root/.bashrc /root/.bashrc_old
 touch /root/.bashrc 
 
 
-cp "$inst"0000/etc/balias /etc/balias.sh ;
+cp "$inst"0000/etc/balias.sh /etc/ ;
 cp "$inst"0000/etc/bash.bashrc /etc/ ;
 ##
 ##
@@ -134,6 +134,7 @@ infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$r
 sudo apt -y install micro;
 micro -plugin install filemanager fish manipulator jump lsp wc editorconfig ;
 # echo 'alias mm=micro' >> /etc/bash.bashrc
+cd $inst; cp 0000/config/micro/*  "/home/$SUDO_USER/.config/micro/ -b
 cp etc/micro_bindings.json "/home/$SUDO_USER/.config/micro/bindings.json" -b
 cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
 ##
