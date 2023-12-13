@@ -1,4 +1,3 @@
-
 #!/bin/bash
 ## written by 12ants.github.io
 #########################

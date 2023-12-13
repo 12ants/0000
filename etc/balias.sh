@@ -1,10 +1,8 @@
 #!/bin/bash
+##
 ## . /etc/balias.sh
-alias loginscreen='read -n1 -ep "  --  "$gray$dim"Choose default login screen, "$re"["$green"G"$re"]"$gray$dim"raphical or  "$re"["$blue"t"$re"]"$gray$dim"erminal?: " "lscreen";
-echo -e "  --  $lscreen"
-if [ "$lscreen" == "g" ]; then echo Graphical; systemctl set-default graphical.target;
-else echo Terminal; systemctl set-default multi-user.target;
-fi'
+##
+##
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -15,13 +13,11 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias "mmbinds"='micro /home/$USER/.config/micro/bindings.json'
 alias "files"='cd /home/files/htdocs/files.12ants.com/files/ -b; chown files: "/home/afiles/htdocs/files.12ants.com/files/* -R; "'
-alias "psp"='echo -e "\n\n\n\n\n\n\n"; tput cuu 4'
+alias "psp"='echo -e "\n\n\n\n\n\n\n"; tput cuu 4; '
 alias "portsopen"='echo -e " $(tput smso) " ; ss -rnpf inet'
 alias "ports"='echo -e "\n\n   $cyan-$re Open ports on local network"$cyan" -"$re" \n"; echo -e " -- -- -- -- -- -- -- $(portsopen;  echo " -- -- -- -- -- -- --")"|column -tLo "$(tput sgr0)|  " -tLo "  $(tput sgr0)||   " -H 1,2,3,4,8; echo -e "\n\n" '
 alias "greet"='echo -n -e "  $(tput setaf 6)--$re Welcome back $darkblue $USER, $re today is:$blue "; date; echo;'
-
 export ipn="$(hostname -I|tail -c3)"
-
 alias "ipnet"="tput setab $ipn; hostname -I|head -c 13; tput sgr0;";
 alias "ippub"="wget -qO- ifconfig.me";
 alias "ipports"="sudo lsof -i -P -n";
@@ -60,14 +56,12 @@ alias "kk"='read -ep ">_ " 'kl'; printf "$kl"|gh gist create -f $(date +%A_%y_%m
 alias "kf"='guf=$(gum file);echo -e "\n\n\n\n\n"; tput cuu 2; read -ep "$c2 title: $cyan" -i "$(date +%A%y%m%d%0k%M.sh)" "ttll";cat $guf|gh gist create -f $ttll - '
 ## ssh
 alias "sl"='read -ep "$c2 ssh: 192.168.0." -i "$sl" sl; read -ep "$c2 user: " -i "$slu" slu;  ssh 192.168.0.$sl -l $slu'
-#alias ali="read -ep ":" alis; echo "alias $alis" >> /etc/balias" 
 alias "bbbb"="micro /etc/balias.sh && read -n1 && . /etc/balias.sh"
 alias "balias"="echo try bbbb"
 alias "uu"='read -ep "update?" upda && sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo snap refresh && jp2a /boot/grub/tard.jpg|pv --rate-limit=2222 --quiet; sleep 2 && reboot'
-alias "www"="chromium"
-alias "aa"='apropos'
-the_weather="$(curl -sm2 'http://wttr.in/Stockholm?format=%l:+%c+%f')"
-alias "vv"='printf "${the_weather:-I hope the weather is nice}\n"'
+alias "www"="browser"
+alias "aa"='apropos'; the_weather="$(curl -sm2 'http://wttr.in/Stockholm?format=%l:+%c+%f')";
+alias "vv"='printf "${the_weather:-I hope the weather is nice}\n"';
 alias "ants"="bash <(wget -O- 12ants.github.io) ; exit 1; " 
 ############################################
 ## RANDOM_STUFF ############################
