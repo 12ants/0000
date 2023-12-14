@@ -29,10 +29,18 @@ alias "u1"="tput cuu1; "
 alias "u2"="tput cuu1; tput cuu1; "
 alias "u3"="tput cuu1; tput cuu1; tput cuu1; "
 alias "u4"="tput cuu1; tput cuu1; tput cuu1; tput cuu1; "
+##
+##
 export u4="$(u4) "
+export s4='echo -e "\n\n\n\n";'
 ##
 alias "qw"="fortune|lolcat -a& disown; sleep 1; "
 ##
+#!/bin/bash ## RAINBOW-TEXT ## Example usage: rb "Yo yo yo " 
+rb() { echo;echo; colors=("31" "33" "32" "36" "34" "35")
+for ((i=0; i<${#1}; i++)); do char="${1:i:1}"; color_index=$((i % ${#colors[@]}))
+color_code="${colors[$color_index]}"; echo -en "\033[${color_code}m${char}\033[0m"; done; echo;echo;echo; } 
+alias rainbow='echo;echo;echo; tput cuu 2; read -ep "$c2 " "rainbow"; rb "$rainbow";' 
 ##
 alias "gg"='if [ $USER == "root" ]; then echo exit; exit; else psp; read -ep "$c2 google: $cyan" -i "$gggg" "gggg"; 
 falkon "google.com/search?q=$gggg">/dev/null& disown; tput cuu1; echo "$c2 $rev$gggg"; echo -e "$re \n\n";fi; '
@@ -83,4 +91,4 @@ alias "ali"='psp read -ep "" -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; e
 alias "fakta"='neofetch'
 alias zzzz='ee ee 2>/dev/null'
 alias oi='echo z; sleep 1; !!'
-alias own='read -ep "		$c2 OWN$cyan /home/$SUDO_USER$re for $blue$SUDO_USER$re? " yno; chown $SUDO_USER: /home/$SUDO_USER -Rc' 
+alias own='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -Rc; else echo "  -- no root"; fi ' 
