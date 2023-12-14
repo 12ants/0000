@@ -73,8 +73,8 @@ echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput seta
 #####
 alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -R; else echo "$c2 no root..."; chown $SUDO_USER: ~ -R; fi ' 
 if [ $UID == 0 ]; then export "ghh=/home/$SUDO_USER/GITHUB" ; else export "ghh=/home/$USER/GITHUB"; fi ; mkdir $ghh -p -m -775 2>/dev/null; 
-alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
-alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
+alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
+alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_sync_gh_0000='cd $ggh; git clone "https://github.com/12ants/0000" 2>/dev/null cd 0000; git pull origin main fi '
 ##########################################
 ## pspace && read -ep "$c2 hello: $rev" -i "$var1" "var1"; pspace ##
