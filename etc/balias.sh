@@ -69,7 +69,7 @@ alias "balias"="echo try bbbb"
 alias "uu"='read -ep "update?" upda && sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo snap refresh && jp2a /boot/grub/tard.jpg|pv --rate-limit=2222 --quiet; sleep 2 && reboot'
 alias "www"="browser"
 alias "aa"='apropos'; the_weather="$(curl -sm2 'http://wttr.in/Stockholm?format=%l:+%c+%f')";
-alias "vv"='printf "${the_weather:-I hope the weather is nice}\n"';
+alias "vv"='printf "    ${the_weather:-I hope the weather is nice}\n"';
 alias "ants"="bash <(wget -O- 12ants.github.io) ; exit 1; " 
 ############################################
 ## RANDOM_STUFF ############################
@@ -83,14 +83,17 @@ echo " $(rrf)  ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf
 echo " $(tput setaf $(rr2))  ---------------------------------- " ;
 echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)"; echo; '
 #####
+alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -Rc; else echo "$c2 no root..."; chown $SUDO_USER: ~ -Rc; fi ' 
+if [ $UID == 0 ]; then export "ghh=/home/$SUDO_USER/GITHUB" ; else export "ghh=/home/$USER/GITHUB"; fi ; own 
+mkdir $ghh/0000 -p -m -775 2>/dev/null; own
 alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
 alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
+alias 12_sync_gh_0000='cd $ggh; if [ -d 0000 ]; then cd 0000; else ee oo; fi '
 ##########################################
 ## pspace && read -ep "$c2 hello: $rev" -i "$var1" "var1"; pspace ##
 ####################################################################
-alias "ali"='psp read -ep "" -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; echo -e "\n $ali \n " '
+alias "ali"='psp read -ep "$c2 " -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; echo -e "\n $ali \n " '
 ####################################################################
 alias "fakta"='neofetch'
 alias zzzz='ee ee 2>/dev/null'
 alias oi='echo z; sleep 1; !!'
-alias own='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -Rc; else echo "  -- no root"; fi ' 
