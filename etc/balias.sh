@@ -78,7 +78,7 @@ echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput seta
 ##########################################
 ## pspace && read -ep "$c2 hello: $rev" -i "$var1" "var1"; pspace ##
 ####################################################################
-alias "ali"='psp; read -ep "" -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; echo -e "\n $ali \n " '
+alias "ali"='psp read -ep "" -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; echo -e "\n $ali \n " '
 ####################################################################
 alias "fakta"='neofetch'
 alias zzzz='ee ee 2>/dev/null'
