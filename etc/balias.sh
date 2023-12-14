@@ -43,7 +43,7 @@ color_code="${colors[$color_index]}"; echo -en "\033[${color_code}m${char}\033[0
 alias rainbow='echo;echo;echo; tput cuu 2; read -ep "$c2 " "rainbow"; rb "$rainbow";' 
 ##
 alias "gg"='if [ $USER == "root" ]; then echo exit; exit; else psp; read -ep "$c2 google: $cyan" -i "$gggg" "gggg"; 
-falkon "google.com/search?q=$gggg">/dev/null& disown; tput cuu1; echo "$c2 $rev$gggg"; echo -e "$re \n\n";fi; '
+www-browser "google.com/search?q=$gggg">/dev/null& disown; tput cuu1; echo "$c2 $rev$gggg"; echo -e "$re \n\n";fi; '
 ##
 ## alias "own"="read -ep '  u $USER to $pink$SUDO_USER$re ' -i "[OK]" ro; chown $SUDO_USER: /home/$SUDO_USER/ -R; echo GG;"
 ##
@@ -83,6 +83,8 @@ echo " $(rrf)  ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf
 echo " $(tput setaf $(rr2))  ---------------------------------- " ;
 echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)"; echo; '
 #####
+alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
+alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; cp balias.sh /etc/ -b;'
 ##########################################
 ## pspace && read -ep "$c2 hello: $rev" -i "$var1" "var1"; pspace ##
 ####################################################################
