@@ -1,10 +1,10 @@
 
 #/bin/bash
 #grub
-mkdir -p -m 775 /boot/grub/ ; 
-cd /boot/grub/ ;
+mkdir -p -m 775 /boot/grub/ ;  cd /boot/grub/ ; 
 wget -O tard.jpg https://github.com/12ants/00/raw/main/img/tard2.jpg;
-rm /etc/default/grub.d/*;
+mkdir -p -m 775 "/home/$SUDO_USER/ants/bu/";
+mv /etc/default/grub.d/* /home/$SUDO_USER/ants/bu/;
 echo '
 GRUB_BACKGROUND="/boot/grub/tard.jpg"
 GRUB_GFXMODE=auto
@@ -21,4 +21,4 @@ GRUB_CMDLINE_LINUX_DEFAULT="gfxterm"
 GRUB_GFXPAYLOAD_LINUX=keep
 ' > /etc/default/grub; 
 update-grub ; 
-echo "    OK    "
+tput cuu 8; tput ed; echo -e "\n\n$c2 GRUB_2 updated . . . \n\n"

@@ -71,8 +71,10 @@ echo " $(rrf)  ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf
 echo " $(tput setaf $(rr2))  ---------------------------------- " ;
 echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)"; echo; '
 #####
-alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -R; else echo "$c2 no root..."; chown $SUDO_USER: ~ -R; fi ' 
-if [ $UID == 0 ]; then export "ghh=/home/$SUDO_USER/GITHUB" ; else export "ghh=/home/$USER/GITHUB"; fi ; mkdir $ghh -p -m -775 2>/dev/null; 
+alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -R; else echo "$c2 no root..."; chown $SUDO_USER: /etc/ba* -R; fi ' 
+##
+if [ $UID == 0 ]; then export "ghh=/home/$SUDO_USER/Github" ; else export "ghh=/home/$USER/Github"; fi ; mkdir $ghh -p -m -775 2>/dev/null; 
+##
 alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_sync_gh_0000='cd $ggh; git clone "https://github.com/12ants/0000" 2>/dev/null cd 0000; git pull origin main fi '
@@ -83,3 +85,4 @@ alias "ali"='psp read -ep "$c2 " -i "alias " "ali"; echo "$ali" >> /etc/balias.s
 ####################################################################
 alias "fakta"='neofetch'
 alias "coolors"=". $ghh/0000/etc/coolors.sh"
+alias "zz"="ranger 2>/dev/null" 

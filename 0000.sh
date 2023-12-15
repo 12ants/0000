@@ -40,8 +40,8 @@ read
 inst="/home/$SUDO_USER/";
 mkdir /home/$SUDO_USER/.config/ -p;
 mkdir /root/.config/ -p;
-mkdir -p -m 775 /etc/ants12;
-$own ; cd $inst; rm 0000 -R ;2>/dev/null
+mkdir -p -m 775 /etc/ants;
+$own ; cd $inst; rm 0000 -R 2>/dev/null 
 git clone https://github.com/12ants/0000; cd 0000; tput setaf 6; pwd; sleep 1; $own
 ##
 ##
@@ -95,7 +95,13 @@ tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1;
 read -ep "         -- Install essential apps? $(tput setaf 2)" -i "y" "b00b"; #BBBB
 #BBBB
 if [ $b00b == y ]; then echo "Make it so...";
-apt update; apt upgrade -y;
+
+
+tput cuu 8; tput ed;
+
+ee -e "\n\n$c2 hello oioi \n\n";
+
+
 
 apt -y install ssh openssh-server openssl curl wget dnsutils htop nano googler|lolcat -a -F .001 -s 111 -p 11 -d 22;
 tput cup 0; apt -y install w3m btop mc neofetch googler lolcat pv gh git fortune tmux nnn|lolcat -a -F .01 -s 2111 -p 111 -d 122;
@@ -130,14 +136,7 @@ else echo "OK"; fi; cd $inst;
 
 # micro
 infile=micro; $pspace; read -ep "$c2 Install $infile? ["$green"Y"$re"/"$red"n"$re"] " yn;if [ "$yn" != "${yn#[Nn]}" ];then echo "$c2 nope";else
-##
-sudo apt -y install micro;
-micro -plugin install filemanager fish manipulator jump lsp wc editorconfig ;
-# echo 'alias mm=micro' >> /etc/bash.bashrc
-cd $inst; cp 0000/config/micro/*  "/home/$SUDO_USER/.config/micro/ -b
-cp etc/micro_bindings.json "/home/$SUDO_USER/.config/micro/bindings.json" -b
-cp etc/micro_bindings.json "/root/.config/micro/bindings.json" -b
-##
+
 echo -e "\n\n$c2$green $infile$re INSTALLED \n\n"; fi # -- INSTALLER COMPLETED -- #
 ##
 ##
