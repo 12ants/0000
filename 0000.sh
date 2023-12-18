@@ -42,13 +42,19 @@ git pull
 ##
 ##
 #read -ep "$c2 Cap: " -i "$PWD" yno; cd $yno;
-cd $ghh/0000
-a1=($(ls ./etc))
-a2=($(ee ${a1[@]^}))       ## Cap-letter
-a4=($(ee ${a2[@]//_/" '"})) ## rm _
-a6=($(ee ${a4[@]%.*}))     ## rm .*
-ee ${a6[@]} 
-ops=(${a6[@]})
+# cd $ghh/0000cd $ghh/0000
+# a1=($(ls ./etc))
+# a2=($(echo ${a1[@]^}))           ## Cap-letter
+# a4=($(echo ${a2[@]%.*}))         ## rm .*
+# a6=($(echo ${a4[@]//_/" '"}))    ## rm _ 
+# echo ${a6[@]} 
+# ops=(${a6[@]})
+# a1=($(ls ./etc))
+# a2=($(echo ${a1[@]^}))           ## Cap-letter
+# a4=($(echo ${a2[@]%.*}))         ## rm .*
+# a6=($(echo ${a4[@]//_/" '"}))    ## rm _ 
+# echo ${a6[@]} 
+# ops=(${a6[@]})
 ##
 source multi.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
