@@ -1,4 +1,14 @@
 #!/bin/bash
+
+
+cd $ghh/0000/etc;
+read -ep "$c2 etc? " -i "$PWD" yno; cd $yno;
+a1=($(ls))
+a2=($(echo ${a1[@]%.*}))           ##  rm .*
+a4=($(echo ${a2[@]^}))         ##  Cap-letter
+# a6=($(echo ${a4[@]//_/" '"}))    ## rm _ 
+echo ${a4[@]} 
+ops=(${a4[@]})
 ## MULTISELECT BASH-MENU
 ##
 ## To run this script: -first declare the options:
@@ -119,7 +129,8 @@ function multiselect {
 ##
 ##
 opts="opts1.sh"; echo "">$opts;
-my_options=( "o1" "o2"  "o3" "o4" "o5" "o6" "o7" "o8" )
+# my_options=($(ls))
+# my_options=($(echo ${ls[@]%.*}))  
 pre=false
 #result=(  "res1" "res2" "res3")
 multiselect result ops pre
@@ -127,7 +138,7 @@ echo "  ------------------------------------------
 "
 for index in "${!result[@]}";
 do
-    echo -e "  ${ops[index]} ->\t ${result[$index]}"
+    echo -e "  ${ops[index]} ->\t\t\t   ${result[$index]}"
 done
 
 echo "
@@ -152,7 +163,8 @@ tput cuu1; echo -e "\t\t\t\t\t\t[$green OK$re$dim ]
 fi
 ##########
 idx=0
-for option in "${my_options[@]}"; do
+#echo ${ops[@]//-/_};
+for option in "${ops[@]//-/_}"; do
 printf  -v "$option" "${result[idx]}"  
  printf "$option=${result[idx]}\n" >> $opts
     ((idx++)) 
