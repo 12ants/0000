@@ -25,8 +25,10 @@ ghh="/home/$SUDO_USER/Github";
 mkdir $ghh -p -m -775; $own; $mod;
 ##
 cd $ghh;
-git clone https://github.com/12ants/0000.git; 
-cd 0000; git stash 2>/dev/null; git pull 2>/dev/null;
+git clone https://github.com/12ants/0000.git 2>/dev/null;
+cd 0000
+git stash
+git pull 
 ##
 ## add user 12ants
 ##
@@ -40,15 +42,15 @@ cd 0000; git stash 2>/dev/null; git pull 2>/dev/null;
 ##
 ##
 #read -ep "$c2 Cap: " -i "$PWD" yno; cd $yno;
-cd $ghh/0000/etc;
-a1=($(ls))
+cd $ghh/0000
+a1=($(ls ./etc))
 a2=($(ee ${a1[@]^}))       ## Cap-letter
 a4=($(ee ${a2[@]//_/" '"})) ## rm _
 a6=($(ee ${a4[@]%.*}))     ## rm .*
 ee ${a6[@]} 
 ops=(${a6[@]})
-cd $ghh/0000;
-. multi.sh
+##
+source multi.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
 #echo o 
 #{a6[@]}
