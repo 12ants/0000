@@ -18,7 +18,35 @@ left2=$(tput cub 2) up1=$(tput cuu1) c35=""$cyan"-------------------------------
 
 clear; echo -e " \n\t $c35\n\t Welcome to$cyan 12ants$re bash-improver! \n\t $c35\n\n"; 
 read -n1 -ep "$ll$c2 Do you wish to proceed?  "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else
-alias own="chown "$SUDO_USER": /home/"$SUDO_USER" -R;  chmod 775 /home/"$SUDO_USER" -R "; fi ; 
-ghh="/home/$SUDO_USER/Github"; mkdir $ghh -p -m -775; own; cd $ghh; 
-rm $ghh -R; git clone https://github.com/12ants/0000.git; cd 0000/etc;
+alias "own"="""chown "$SUDO_USER": /home/"$SUDO_USER" -R ;  chmod 775 /home/"$SUDO_USER" -R """; 
+ fi ; 
+ghh="/home/$SUDO_USER/Github"; mkdir $ghh -p -m -775; $own; mkdir $ghh -p -m 775; cd $ghh; 
+rm $ghh/0000 -R 2>/dev/null; git clone https://github.com/12ants/0000.git; cd $ghh/0000/etc;
+##
+## add user 12ants
+##
+deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
+useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;
+echo ""12ants":"aaaa"" | chpasswd
+echo '12ants ALL=(ALL) NOPASSWD:ALL' > "/etc/sudoers.d/12ants"
+echo ". /etc/bash.bashrc; . /etc/balias;" > /12ants/.profile;
+chsh -s /bin/bash 12ants
+##
+##
+##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
