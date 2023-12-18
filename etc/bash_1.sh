@@ -3,5 +3,9 @@
 ## . /etc/balias.sh
 ##
 ##
-if [ $UID != 0 ] ; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
-cp ../bash.bashrc /etc/ -b; own;
+cd $ghh/0000/etc 2>/dev/null;
+cp ../conf/bash.bashrc /etc/ -b; own;
+##
+##
+echo -e "\n\t Copy new bash file\n\n"
+##
