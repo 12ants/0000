@@ -18,9 +18,10 @@ left2=$(tput cub 2) up1=$(tput cuu1) c35=""$cyan"-------------------------------
 
 clear; echo -e " \n\t $c35\n\t Welcome to$cyan 12ants$re bash-improver! \n\t $c35\n\n"; 
 read -n1 -ep "$ll$c2 Do you wish to proceed?  "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn";if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else
-alias own="chown "$SUDO_USER": /home/"$SUDO_USER" -R;  chmod 775 /home/"$SUDO_USER" -R "
-ghh="/home/$SUDO_USER/Github"; mkdir $ghh -p -m -775; own; cd $ghh; git clone https://github.com/12ants/0000.git; cd 0000/etc; pwd;
-fi
+alias own="chown "$SUDO_USER": /home/"$SUDO_USER" -R;  chmod 775 /home/"$SUDO_USER" -R "; fi ; 
+ghh="/home/$SUDO_USER/Github"; mkdir $ghh -p -m -775; own; cd $ghh; 
+rm $ghh -R; git clone https://github.com/12ants/0000.git; cd 0000/etc;
+
 ##
 ##
 ##
