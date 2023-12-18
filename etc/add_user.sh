@@ -8,6 +8,8 @@ echo '12ants ALL=(ALL) NOPASSWD:ALL' > "/etc/sudoers.d/12ants"
 echo ". /etc/bash.bashrc; . /etc/balias;" > /12ants/.profile; rm /12ants/.bashrc;
 chsh -s /bin/bash 12ants
 ##
+git clone https://github.com/12ants/0000
+##
 echo -e "\n\n User added... \n\n"
 ##
 ##
