@@ -2,11 +2,15 @@
 ##################################
 ## GITHUB CREDENTIALS INSTALLER ##
 ##################################
-if [ $UID == 0 ]; then echo -e "\n$c2 INSTALLING GITHUB CREDENTIALS...\n"; 
-tput setaf dim; cd /home/$SUDO_USER/; read -t 4 -ep "$c2 Github... " "GH";
-apt install -y gh 2>/dev/null && ee $re; gh auth logout; 
-wget -O gh.txt "https://gist.github.com/12ants/77f17ed35f1e38fb9a98393508adc030/raw/309e1d1d7c73a0e29882581dc94fe499766de3ff/gistfile1.txt" ; 
-gh auth login --with-token < gh.txt; gh auth status; sleep 1;
+if [ $UID == 0 ]; then 
+echo -e "\n$c2 INSTALLING GITHUB CREDENTIALS...\n"; 
+##
+tput setaf dim; cd /home/$SUDO_USER/; 
+wget -O gh.txt "https://gist.github.com/12ants/8ce2c5f5fbb31250e634c17d024ae616/raw/8e683297beacbd5c796260976f6ba413f711b3e2/gghh.txt" ; 
+apt install -y gh >/dev/null
+echo "$re gg"; gh auth logout; gh auth login --with-token < gh.txt; sleep 1; gh auth status;
+git config --global user.email leonljunghorn@gmail.com
+git config --global user.name 12ants
 ##
 echo -e "\n$c2 Github-credentials updated$green OK \n"; else echo "not root"; fi 
 ## GITHUB CREDENTIALS INSTALLER ##
