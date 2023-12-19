@@ -129,12 +129,8 @@ function multiselect {
 ##
 ##
 opts="opts1.sh"; echo "">$opts;
-<<<<<<< HEAD
-#my_options=( "o1" "o2"  "o3" "o4" "o5" "o6" "o7" "o8" )
-=======
 # my_options=($(ls))
 # my_options=($(echo ${ls[@]%.*}))  
->>>>>>> a6c224036308c66912530ee6d197e2749677491b
 pre=false
 #result=(  "res1" "res2" "res3")
 multiselect result ops pre
@@ -142,11 +138,7 @@ echo "  ------------------------------------------
 "
 for index in "${!result[@]}";
 do
-<<<<<<< HEAD
-    echo -e "  ${ops[index]}=${result[$index]}"
-=======
     echo -e "  ${ops[index]} ->\t\t\t   ${result[$index]}"
->>>>>>> a6c224036308c66912530ee6d197e2749677491b
 done
 
 echo "
@@ -178,14 +170,9 @@ tput cuu1; echo -e "\t\t\t\t\t\t[$green OK$re$dim ]
 fi
 ##########
 idx=0
-<<<<<<< HEAD
-for option in "${my_options[@]}"; do
-printf  -v """$option""" "${result[idx]}"  
-=======
 #echo ${ops[@]//-/_};
 for option in "${ops[@]//-/_}"; do
 printf  -v "$option" "${result[idx]}"  
->>>>>>> a6c224036308c66912530ee6d197e2749677491b
  printf "$option=${result[idx]}\n" >> $opts
     ((idx++)) 
 done
