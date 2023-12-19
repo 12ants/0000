@@ -21,7 +21,7 @@ read -n1 -ep "$ll$c2 Do you wish to proceed?  "$dim"["$re$bold"Y"$dim"/"$re$bold
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$c2 OK"; fi ;
 own="chown "$SUDO_USER": /home/"$SUDO_USER" -R"; 
 mod="chmod 775 /home/"$SUDO_USER" -R";
-ghh="/home/$SUDO_USER/Github"; 
+ghh="/home/$SUDO_USER/gh"; 
 mkdir $ghh -p -m -775; $own; $mod;
 ##
 cd $ghh;
