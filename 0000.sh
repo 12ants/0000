@@ -50,10 +50,10 @@ git pull >/dev/null
 ##
 ## add user 12ants
 ##
-source ./misc/coolors.sh;
+source ./snips/coolors.sh;
 source ./conf/cred.sh;
 cd $ghh/0000
-source ./misc/coolors.sh;
+source ./snips/coolors.sh;
 echo -e "\n\n $PWD \n\n"
 ####
 ##deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
