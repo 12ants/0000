@@ -21,15 +21,15 @@ export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
-left2=$(tput cub 2) up1=$(tput cuu1) c35=""$cyan"--------------------------------$re" c2="$cyan --$re" ll=$(echo -e "\t"); 
+left2=$(tput cub 2) up1=$(tput cuu1) dash=""$cyan"---------------------------------$re" c2="$cyan --$re" tab=$(echo -e "\t"); 
 ##
 ##
 clear; 
-echo -e " \n\t $c35\n\t Welcome to$cyan 12ants$re bash-improver! \n\t $c35\n\n"; 
+echo -e " \n\n\n\n\t\t $dash\n\t\t Welcome to$cyan 12ants$re bash-improver ! \n\t\t $dash\n\n"; 
 echo -en "\t"; 
 ##
 ##
-read -n1 -ep "$ll$c2 Do you wish to proceed?  "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
+read -n1 -ep "$tab$c2 Do you wish to proceed?  "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$c2 OK"; fi ;
 ##
 ##
@@ -40,7 +40,7 @@ mkdir $ghh -p -m -775;
 
 #$own; $mod; #### put back!!!!!
 
-read -ep "$ll$c2 Installation folder: " -i "$ghh/" "ghh";
+read -ep "$tab$c2 Installation folder: " -i "$ghh/" "ghh";
 ##
 cd $ghh;
 git clone https://github.com/12ants/0000.git 2>/dev/null;
@@ -86,9 +86,9 @@ source multi.sh
 #echo o 
 #{a6[@]}
 
-read "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
+read -ep "$tab$c2 Byeeeeee" -i "?" "kjjbhb";
 
-exit 0;
+
 
 
 
