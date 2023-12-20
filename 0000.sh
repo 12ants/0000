@@ -24,8 +24,8 @@ cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput
 left2=$(tput cub 2) up1=$(tput cuu1) dash=""$cyan"---------------------------------$re" c2="$cyan --$re" tab=$(echo -e "\t"); 
 ##
 ##
-clear; 
-echo -e " \n\n\n\n\t\t $dash\n\t\t Welcome to$cyan 12ants$re bash-improver ! \n\t\t $dash\n\n"; 
+#clear; 
+echo -e " \n\n\t ¯\(ツ)/¯ \n\n\t\t $dash\n\t\t Welcome to$cyan 12ants$re bash-improver ! \n\t\t $dash\n\n"; 
 echo -en "\t"; 
 ##
 ##
