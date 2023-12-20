@@ -41,8 +41,9 @@ export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$
 export redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
 export grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 export cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink);
-export left=$(tput cub 2) up1=$(tput cuu1) c28=$(echo " ============================");
-export u8=$(tput cuu 8) c2="$cyan --$re";
+export left=$(tput cub 2) up1=$(tput cuu1) c28=$(echo " ============================") ll
+export ghh="/home/aaaa/gh"  dash="echo "$cyan-----------------------------------$re"" c2="$cyan ----$re" ll=$(echo -e "\t\t") \ 
+
 # nvm support
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -60,8 +61,6 @@ fi
 ## BALIAS/BBBB
 if [ -f /etc/balias.sh ]; then . /etc/balias.sh 2>/dev/null; fi 
 # port from transfer.sh
-transfer(){ if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;} 
-up(){ echo " $(tput setaf 2;) "; if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n\n transfer <file|directory>\n\ ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1"  ;file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1  ;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name  "|tee /dev/null;fi; echo -e "\n $(tput sgr0;)\n OK\n\n";} 
 ####
 #### Welcome screen
 ####
