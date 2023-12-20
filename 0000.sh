@@ -60,7 +60,7 @@ cd $ghh/0000
 source ./snips/coolors.sh;
 #echo -e "\n\n $PWD \n\n"
 ##
-bash ./multi.sh
+bash ./qq.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
 #echo o 
 #{a6[@]}

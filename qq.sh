@@ -98,8 +98,8 @@ function prompt_for_multiselect {
 
 # Usage Example
 
-OPTIONS_VALUES=("APPL" "MSFT" "GOOG")
-OPTIONS_LABELS=("Apple" "Microsoft" "Google")
+OPTIONS_VALUES=($(ls ./etc/))
+#OPTIONS_LABELS=("Apple" "Microsoft" "Google")
 
 for i in "${!OPTIONS_VALUES[@]}"; do
 	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
@@ -115,3 +115,7 @@ done
 
 echo "${CHECKED[@]}"
 export "${CHECKED[@]=y}"
+
+for i in "${!CHECKED[@]}"; do
+	bash ./etc/$CHECKED;
+done
