@@ -11,7 +11,7 @@ if [ -f "../conf/s/gh.txt" ]; then
 echo "$re gg"; gh auth logout; gh auth login --with-token < ../conf/s/gh.txt;
 else source ../conf/cred.sh; 
 fi 
-rm ../conf/ghcred256.txt; 
+rm ../conf/s/gh.txt; 
 sleep 1; gh auth status;
 echo;echo;
 git config --global user.email leonljunghorn@gmail.com

@@ -15,7 +15,7 @@ fi
 cd $ghh/0000/etc 2>/dev/null;
 cp ../conf/bash.bashrc /etc/ -b; 
 source /etc/bash.bashrc
-own;
+own 
 
 ##
 ##

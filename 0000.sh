@@ -42,19 +42,31 @@ mkdir $ghh -p -m -775;
 
 read -ep "$ll$c2 Github folder: " -i "$ghh" "ghh";
 ##
-cd $ghh;
+cd $ghh; rm $ghh/0000;
 git clone https://github.com/12ants/0000.git >/dev/null;
 cd $ghh/0000;
-git stash >/dev/null
-git pull >/dev/null
+# git stash >/dev/null
+# git pull >/dev/null
 ##
 ## add user 12ants
 ##
 source ./snips/coolors.sh;
-source ./conf/cred.sh;
+read -n1 -ep "$ll$c2 Github & Cloudflare cred? "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
+if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope"; else echo "$ll$c2 OK";
+##
+bash ./conf/cred.sh;
+fi 
 cd $ghh/0000
 source ./snips/coolors.sh;
-echo -e "\n\n $PWD \n\n"
+#echo -e "\n\n $PWD \n\n"
+##
+bash ./multi.sh
+#a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
+#echo o 
+#{a6[@]}
+##
+read -ep "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
+##
 ####
 ##deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
 #useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;
@@ -81,13 +93,6 @@ echo -e "\n\n $PWD \n\n"
 # echo ${a6[@]} 
 # ops=(${a6[@]})
 ##
-source ./multi.sh
-#a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
-#echo o 
-#{a6[@]}
-
-read -ep "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
-
 
 
 
