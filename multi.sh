@@ -145,10 +145,17 @@ echo "
   ------------------------------------------
 ";
 #############
+
+a2=($(echo ${ops[@]%.*}))           ##  rm .*
+a4=($(echo ${a2[@]^}))    
+
 for index in "${!result[@]}";
 do
-    echo -e ""${ops[index]}"="${result[$index]}" "
+    echo -e "" ${a1[index]}"="${result[$index]}" "
+	
 done
+
+
 ##########  ^^^^new
 ########
 read -n1 -ep "$(tput setaf 7 bold)
@@ -159,11 +166,11 @@ if [ "$yn" != "${yn#[Nn]}" ]; then
 source multi;
 else
 ## write to file
-for index in "${!result[@]}";
-do
-    echo -e "  ${ops[index]} ->\t ${result[$index]}" >> $opts
-done
-printf "\n ---- \n\n" >> $opts;
+#for index in "${!result[@]}";
+#do
+#    echo -e "  ${ops[index]} ->\t ${result[$index]}" >> $opts
+#done
+#printf "\n ---- \n\n" >> $opts;
 ## write to file
 tput cuu1; echo -e "\t\t\t\t\t\t[$green OK$re$dim ] 
   --  variables written to: [$re./$opts$dim]";
@@ -171,9 +178,9 @@ fi
 ##########
 idx=0
 #echo ${ops[@]//-/_};
-for option in "${ops[@]//-/_}"; do
-printf  -v "$option" "${result[idx]}"  
- printf "$option=${result[idx]}\n" >> $opts
+for option in "${a1[@]}"; do
+printf  -v "bash $option" "${result[idx]}"  
+ printf "bash $option=${result[idx]}\n" >> $opts
     ((idx++)) 
 done
 tput sgr0;

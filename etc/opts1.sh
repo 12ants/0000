@@ -1,32 +1,16 @@
 
-  Add_user ->	 true
-  Balias ->	 false
-  Bash ->	 false
-  Basic_apps ->	 false
-  Cloudpanel ->	 false
-  Github ->	 false
-  Grub ->	 false
-  Kodbox ->	 false
-  Login_ssh ->	 false
-  Micro ->	 false
-  Opts1 ->	 false
-  Tmux ->	 false
-  Webmin ->	 false
-  Xfce4_desktop ->	 false
-
- ---- 
-
-Add_user=true
-Balias=false
-Bash=false
-Basic_apps=false
-Cloudpanel=false
-Github=false
-Grub=false
-Kodbox=false
-Login_ssh=false
-Micro=false
-Opts1=false
-Tmux=false
-Webmin=false
-Xfce4_desktop=false
+bash add_user.sh=false
+bash balias.sh=false
+bash bash.sh=false
+bash basic_apps.sh=false
+bash cloudpanel.sh=false
+bash github.sh=true
+bash grub.sh=true
+bash kodbox.sh=false
+bash login_ssh.sh=false
+bash micro.sh=false
+bash opts1.sh=false
+bash t=false
+bash tmux.sh=false
+bash webmin.sh=false
+bash xfce4_desktop.sh=false
