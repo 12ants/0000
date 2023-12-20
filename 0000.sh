@@ -45,14 +45,16 @@ read -ep "$ll$c2 Installation folder: " -i "$ghh/" "ghh";
 cd $ghh;
 git clone https://github.com/12ants/0000.git 2>/dev/null;
 cd $ghh/0000;
-git stash 2>/dev/null
-git pull 2>/dev/null
+git stash >/dev/null
+git pull >/dev/null
 ##
 ## add user 12ants
 ##
-
+source ./misc/coolors.sh;
 source ./conf/cred.sh;
-
+cd $ghh/0000
+source ./misc/coolors.sh;
+echo -e "\n\n $PWD \n\n"
 ####
 ##deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
 #useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;
@@ -84,8 +86,9 @@ source multi.sh
 #echo o 
 #{a6[@]}
 
+read "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
 
-
+exit 0;
 
 
 
