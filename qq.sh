@@ -114,8 +114,8 @@ for i in "${!SELECTED[@]}"; do
 done
 
 echo "${CHECKED[@]}"
-export "${CHECKED[@]=y}"
+# export "${CHECKED[@]=y}"
 
 for i in "${!CHECKED[@]}"; do
-	bash ./etc/$CHECKED;
+	bash ./etc/$CHECKED; echo; sleep 2; echo;
 done
