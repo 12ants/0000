@@ -43,7 +43,7 @@ mkdir $ghh -p -m -775;
 read -ep "$ll$c2 Github folder: " -i "$ghh" "ghh";
 ##
 cd $ghh;
-git clone https://github.com/12ants/0000.git 2>/dev/null;
+git clone https://github.com/12ants/0000.git >/dev/null;
 cd $ghh/0000;
 git stash >/dev/null
 git pull >/dev/null
@@ -81,7 +81,7 @@ echo -e "\n\n $PWD \n\n"
 # echo ${a6[@]} 
 # ops=(${a6[@]})
 ##
-source multi.sh
+source ./multi.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
 #echo o 
 #{a6[@]}

@@ -6,8 +6,11 @@ echo "##################################"
 #if [ $UID == 0 ]; then 
 echo -e "\n$c2 INSTALLING GITHUB CREDENTIALS...\n"; 
 tput setaf dim; cd $ghh/0000; 
-apt install -y gh > /dev/null
+apt install -y gh 2>/dev/null
+if [ -f "../conf/s/gh.txt" ]; then
 echo "$re gg"; gh auth logout; gh auth login --with-token < ../conf/s/gh.txt;
+else source ../conf/cred.sh; 
+fi 
 rm ../conf/ghcred256.txt; 
 sleep 1; gh auth status;
 echo;echo;
