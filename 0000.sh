@@ -34,8 +34,8 @@ echo -en "\t"; read -ep "$c2 Installation folder: " -i "$ghh/" "ghh";
 cd $ghh;
 git clone https://github.com/12ants/0000.git 2>/dev/null;
 cd 0000
-git stash
-git pull 
+git stash >/dev/null
+git pull >/dev/null
 ##
 ## add user 12ants
 ##
@@ -48,6 +48,7 @@ git pull
 #
 ##
 ##
+
 #read -ep "$c2 Cap: " -i "$PWD" yno; cd $yno;
 # cd $ghh/0000cd $ghh/0000
 # a1=($(ls ./etc))
