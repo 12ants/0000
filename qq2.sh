@@ -1,6 +1,19 @@
-#/bin/bash
+#!/bin/bash
 # from SO: https://stackoverflow.com/a/54261882/317605 (by https://stackoverflow.com/users/8207842/dols3m)
-function prompt_for_multiselect {
+tput cup 0;
+tput ed;
+echo "
+  ------------------------------------------
+  ------------ $green hello $re ---------------------
+  ------------------------------------------ 
+  --$dim Choose:  [$re Up / Down$dim ]$re
+  --$dim Select:  [$re Space$dim ]$re
+  --$dim Confirm: [$re Enter$dim ]$re
+  ------------------------------------------
+  -- Choose multiple options: --------------
+  ------------------------------------------
+ "
+function prompt_for_multiselect () {
 
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
@@ -63,9 +76,9 @@ function prompt_for_multiselect {
         # print options by overwriting the last lines
         local idx=0
         for option in "${options[@]}"; do
-            local prefix="[ ]"
+            local prefix="    [ ]"
             if [[ ${selected[idx]} == true ]]; then
-              prefix="[x]"
+              prefix="    [x]"
             fi
 
             cursor_to $(($startrow + $idx))
@@ -95,10 +108,14 @@ function prompt_for_multiselect {
 
     eval $retval='("${selected[@]}")'
 }
-
+echo -e "\n\n\n\n"
 # Usage Example
 
-OPTIONS_VALUES=($(ls ./etc/))
+OPTIONS_VALUES1=($(ls ./etc/))
+
+OPTIONS_VALUES=(${OPTIONS_VALUES1[@]//.*/ })
+
+
 #OPTIONS_LABELS=("Apple" "Microsoft" "Google")
 
 for i in "${!OPTIONS_VALUES[@]}"; do
@@ -113,9 +130,22 @@ for i in "${!SELECTED[@]}"; do
 	fi
 done
 
-echo "source ${CHECKED[@]}"
+echo -e "\n\n\t You chose: \n\t ${CHECKED[@]} \n\n";
+sleep 2;
 # export "${CHECKED[@]=y}"
+##
+##
+for i in "${CHECKED[@]}"; 
+do 
+echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 2; 
 
-for i in "${!CHECKED[@]}"; do
-source ${CHECKED} ; echo -e "\n\t $c2 done"; sleep 2; echo;
+bash "./etc/$i.sh";
+echo "gg"; sleep 2;
 done
+echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
+tput cuu 8; tput ed; 
+source ./snips/timer.sh
+echo -e "byeeeeeeeee"
+reboot
+##
+##

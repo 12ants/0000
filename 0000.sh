@@ -42,9 +42,11 @@ mkdir $ghh -p -m -775;
 
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh";
 ##
-cd $ghh; rm $ghh/0000;
+cd $ghh; rm $ghh/0000 2>/dev/null;
 git clone https://github.com/12ants/0000.git >/dev/null;
 cd $ghh/0000;
+
+# source 0000.sh;
 # git stash >/dev/null
 # git pull >/dev/null
 ##
@@ -60,15 +62,21 @@ cd $ghh/0000
 source ./snips/coolors.sh;
 #echo -e "\n\n $PWD \n\n"
 ##
-bash ./qq.sh
+bash ./qq2.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
 #echo o 
 #{a6[@]}
 ##
 
-read -ep "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
+read -t 22 -ep "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
 ##
 ####
+echo "gg"; sleep 2;
+echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
+tput cuu 8; tput ed; 
+source ./snips/timer.sh
+echo -e "byeeeeeeeee"
+reboot
 ##deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
 #useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;
 #echo ""12ants":"aaaa"" | chpasswd
