@@ -41,7 +41,8 @@ mkdir $ghh -p -m -775;
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh";
 cd $ghh; rm $ghh/0000 -R >/dev/null 
 git clone https://github.com/12ants/0000.git >/dev/null
-$own $mod
+$own 
+$mod 
 cd $ghh/0000; bash ants_installer.sh;
 
 echo $dash GG $dash;
