@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for ((i=0; i<111; i++)) ;do
+for ((i=0; i<256; i++)) ;do
     echo -n '  '
     tput setab $i
     tput setaf $(( ( (i>231&&i<244 ) || ( (i<17)&& (i%8<2)) ||
@@ -8,5 +8,6 @@ for ((i=0; i<111; i++)) ;do
     printf " C %03d " $i
     tput op
     (( ((i<16||i>231) && ((i+1)%8==0)) || ((i>16&&i<232)&& ((i-15)%6==0)) )) &&
-        printf "    " ''
+        printf " " ''
 done
+echo;echo;
