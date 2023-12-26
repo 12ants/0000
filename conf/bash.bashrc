@@ -31,7 +31,21 @@ fi
 unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
-PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$#!/bin/bash
+## written by 12ants.github.io
+#########################
+## -- CUSTOM LINUX --  ##
+#########################
+##
+case $- in
+*i*) ;;
+*) return;;
+esac
+…ipa
+tput sgr0;
+## bash prompt
+PS1='\$[\[\e[9$(rr2);$(rr1)m\]\t\[\e[0m\]][\[\e[9$(rr1)$(rr2)m\]$(ipnet)\[\e[0m\]][\[\e[$(rr2)$(rr1)m\]\u\[\e[0m\]][\[\e[9$(rr1)m\]$(pwd)\[\e[0m\]] \[\e[97;1m\]>\[\e[37;4m\]_\n\[\e[0m\]'
+PS1"
 ;;
 *)
 ;;
