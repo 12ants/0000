@@ -54,17 +54,17 @@ cd $ghh/0000;
 ##
 ## add user 12ants
 ##
-source ./snips/coolors.sh;
+source $ghh/0000/snips/coolors.sh;
 read -n1 -ep "$ll$c2 Github & Cloudflare cred? "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope"; else echo "$ll$c2 OK";
 ##
-bash ./conf/cred.sh;
+bash $ghh/0000/conf/cred.sh;
 fi 
 cd $ghh/0000
-source ./snips/coolors.sh;
+source $ghh/0000/snips/coolors.sh;
 #echo -e "\n\n $PWD \n\n"
 ##
-bash ./qq2.sh
+source $ghh/0000/qq2.sh
 #a1=($(ls)); a2=(${a1[@]^}); a4=(${a2[@]//_/"   " }); a6=(${a4[@]//.*/  }); 
 #echo o 
 #{a6[@]}
@@ -76,7 +76,7 @@ read -t 22 -ep "$ll$c2 Byeeeeee" -i "?" "kjjbhb";
 echo "gg"; sleep 2;
 echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
 tput cuu 8; tput ed; 
-source ./snips/timer.sh
+source $ghh/0000/snips/timer.sh
 echo -e "byeeeeeeeee"
 coolors
 reboot
