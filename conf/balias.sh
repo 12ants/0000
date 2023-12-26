@@ -85,5 +85,6 @@ alias 12_sync_gh_0000='cd $ggh; git clone "https://github.com/12ants/0000" 2>/de
 alias "ali"='psp read -ep "$c2 " -i "alias " "ali"; echo "$ali" >> /etc/balias.sh; echo -e "\n $ali \n " '
 ####################################################################
 alias "fakta"='neofetch 2>/dev/null '
+alias "gg"='psp read -ep "$c2 " -i "google: " "google"; links2 "https://www.google.com/search?q=$google"'
 alias "coolors"=". $ghh/0000/snips/coolors.sh"
 alias "zz"="ranger 2>/dev/null" 
