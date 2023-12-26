@@ -16,9 +16,11 @@ else source ../conf/cred.sh;
 fi 
 rm ../conf/s/gh.txt; 
 sleep 1; gh auth status;
-echo;echo;
-git config --global user.email leonljunghorn@gmail.com
-git config --global user.name 12ants
+echo;echo; psp ; 
+read -ep "$c2 github name: " -i "12ants" "ghname";
+read -ep "$c2 github mail: " -i "leonljunghorn@gmail.com" "ghmail";
+git config --global user.email  "$ghmail"
+git config --global user.name  "$ghname"
 echo;echo;
 echo -e "\n$c2 Github-credentials updated$green OK \n"; 
 # else echo "not root"; fi 
