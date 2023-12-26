@@ -1,4 +1,5 @@
 #!/bin/bash
+reset;
 ############# 12ants.github.com
 echo -e "\n\n"; ll=$(echo -e " \t\t ");
 if [ $UID != 0 ]; then echo -e " \n\n $ll This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; read -ep "$ll k" "k7"; exit 1; fi
@@ -36,8 +37,8 @@ ghh="/home/$SUDO_USER/gh";
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh"; export ghh="$ghh";
 mkdir $ghh -p -m -775 2>/dev/null; 
 mkdir $ghh/bups0000 -p -m -775 2>/dev/null; 
-alias ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R ";
-ghown 
+alias ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R " ; 
+ghown; 
 # $own; $mod; #### put back!!!!!
 cd $ghh; 
 rm $ghh/0000 -R 2>/dev/null
