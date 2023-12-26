@@ -24,7 +24,9 @@ left2=$(tput cub 2) up1=$(tput cuu1) dash="$blue -------------------------------
 ##
 ##
 #clear; 
-tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n\n\t\t  $dash\n$ll  Welcome to $cyan 12ants $re bash-improver! \n$ll $dash"; 
+tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n\n\t\t  
+rb       $blink ¯\(ツ)/¯ ;
+$dash\n$ll  Welcome to $cyan 12ants $re bash-improver! \n$ll $dash"; 
 #echo -en "\t"; 
 ##
 ##
@@ -32,11 +34,11 @@ read -n1 -ep "$ll$c2 Do you wish to proceed? "$dim"["$re$bold"Y"$dim"/"$re$bold"
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ;
 ##
 ##
-own="chown "$SUDO_USER": /home/"$SUDO_USER" -R"; 
-mod="chmod 775 /home/"$SUDO_USER" -R";
-ghh="/home/$SUDO_USER/gh"; 
-export ghh="/home/$SUDO_USER/gh"; 
-mkdir $ghh -p -m -775;
+## own="chown "$SUDO_USER": /home/"$SUDO_USER" -R"; 
+## mod="chmod 775 /home/"$SUDO_USER" -R";
+## ghh="/home/$SUDO_USER/gh"; 
+## export ghh="/home/$SUDO_USER/gh"; 
+## mkdir $ghh -p -m -775;
 
 #$own; $mod; #### put back!!!!!
 
@@ -76,6 +78,7 @@ echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
 tput cuu 8; tput ed; 
 source ./snips/timer.sh
 echo -e "byeeeeeeeee"
+coolors
 reboot
 ##deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
 #useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;

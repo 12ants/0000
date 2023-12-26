@@ -47,11 +47,10 @@ mkdir $ghh/bups0000 -p -m -775;
 $own; $mod; #### put back!!!!!
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh";
 cd $ghh; rm $ghh/0000 -R >/dev/null 
-git clone https://github.com/12ants/0000.git >/dev/null 
-$own 
-$mod 
+git clone https://github.com/12ants/0000.git >&2>/dev/null; 
+$own >&2>/dev/null; 
+$mod >&2>/dev/null; 
 cd $ghh/0000; bash ants_installer.sh;
-
 echo $dash GG $dash;
 
 

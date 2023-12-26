@@ -110,8 +110,8 @@ function prompt_for_multiselect () {
 }
 echo -e "\n\n\n\n"
 # Usage Example
-
-OPTIONS_VALUES1=($(ls ./etc/))
+cd $ghh/0000/etc; 
+OPTIONS_VALUES1=($(ls))
 OPTIONS_VALUES2=(${OPTIONS_VALUES1[@]^})
 OPTIONS_VALUES=(${OPTIONS_VALUES2[@]//.*/ })
 
@@ -144,11 +144,11 @@ for i in "${CHECKED[@]}";
 do 
 echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 1; 
 bash "./etc/$i.sh";
-echo "gg"; sleep 1; source ./snips/coolors.sh;
+echo "gg"; sleep 1; source ../snips/coolors.sh;
 done
 echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
 tput cuu 8; tput ed; 
-source ./snips/timer.sh; source ./snips/coolors.sh; 
+source ../snips/timer.sh; source ../snips/coolors.sh; 
 echo -e "byeeeeeeeee"
 reboot
 ##
