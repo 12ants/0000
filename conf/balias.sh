@@ -77,7 +77,7 @@ alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -R; chmod
 ##
 # if [ $UID == 0 ]; then export "ghh=/home/$SUDO_USER/Github" ; else export "ghh=/home/$USER/Github"; fi ; mkdir $ghh -p -m -775 2>/dev/null; 
 ##
-alias 12_dl='read -ep "$c2 ants.sh dest: " -i "$PWD" "ghh"; cd $ghh; wget -Oants.sh; bash ants.sh'
+alias 12_dl='read -ep "$c2 GitHub Folder: " -i "$rev$PWD" "ghh"; cd $ghh; wget -Oo; bash o'
 alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/etc/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_sync_gh_0000='cd $ggh; git clone "https://github.com/12ants/0000" 2>/dev/null cd 0000; git pull origin main fi '
