@@ -36,7 +36,7 @@ ghh="/home/$SUDO_USER/gh";
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh"; export ghh="$ghh";
 mkdir $ghh -p -m -775 2>/dev/null; 
 mkdir $ghh/bups0000 -p -m -775 2>/dev/null; 
-export ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R ";
+alias ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R ";
 ghown 2>/dev/null;
 # $own; $mod; #### put back!!!!!
 cd $ghh; rm $ghh/0000 -R >/dev/null
