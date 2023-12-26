@@ -117,7 +117,7 @@ envetcdirnotfound=1
 fi
 printf "Config file directory [$envetcdir]: "
 if [ "$config_dir" = "" ]; then
-read -t 1 config_dir
+# read config_dir
 fi
 if [ "$config_dir" = "" ]; then
 config_dir=/etc/webmin
@@ -1080,5 +1080,6 @@ echo "that all third-party modules have been copied to the new"
 echo "version."
 echo ""
 fi
+fi 
 
 

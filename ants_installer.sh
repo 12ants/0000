@@ -25,7 +25,7 @@ left2=$(tput cub 2) up1=$(tput cuu1) dash="$pink -------------------------------
 ##
 #clear; 
 tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n\n\t\t  
-$dash\n$ll  Welcome to $cyan 12ants $re bash-improver! \n$ll $dash"; 
+$dash\n$ll  Welcome to $cyan 12ants $re bash-improver! \n  \t\t$dash"; 
 #echo -en "\t"; 
 ##
 ##
