@@ -76,8 +76,8 @@ echo " $(rrf)  ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput seta
 alias "own"='if [ $UID == 0 ]; then chown $SUDO_USER: /home/$SUDO_USER -R; chmod 775 /home/$SUDO_USER -R; else echo "$c2 no root..."; chown $SUDO_USER: /etc/ba* -Rv; fi ;' 
 alias ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R " 
 alias 12_dl='read -ep "$c2 GitHub Folder: " -i "$rev$PWD" "ghh"; cd $ghh; wget -Oo; bash o'
-alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/config/balias.sh; sudo cp balias.sh /etc/ -b;'
-alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/config/balias.sh; sudo cp balias.sh /etc/ -b;'
+alias 12_dl_balias='wget -O balias.sh https://github.com/12ants/0000/raw/main/conf/balias.sh; sudo cp balias.sh /etc/ -b;'
+alias 12_dl_bash='wget -O balias.sh https://github.com/12ants/0000/raw/main/conf/balias.sh; sudo cp balias.sh /etc/ -b;'
 alias 12_sync_gh_0000='cd $ggh; git clone "https://github.com/12ants/0000" 2>/dev/null cd 0000; git pull origin main fi '
 ##########################################
 ## pspace && read -ep "$c2 hello: $rev" -i "$var1" "var1"; pspace ##
