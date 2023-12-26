@@ -2,6 +2,8 @@
 ## /gh/0000/etc/enter.sh
 #
 #  
+cat ops 
+
 if [ ${CHECKED[] }
 if $
 printf "Webmin - Login name (default aaaa): "
@@ -46,3 +48,4 @@ password2="zxasqw122"
 			echo "ERROR: Passwords don't match"
 			echo ""
 		fi
+        fi 

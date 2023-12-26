@@ -131,15 +131,14 @@ for i in "${!SELECTED[@]}"; do
 	fi
 done
 
-echo -e "\n\n\t You chose: \n\t ${CHECKED[@]} \n\n\n\n";
+echo -e "\n\n\t You chose: \n\t ${CHECKED[@]/#/"$c2 "} \n\n\n\n";
 read -n1 -ep "
 $up1$up1$ll$c2 Do you wish to proceed? "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ; tput cup 0; source $ghh/0000/snips/coolors.sh;
-sleep 1;
-cd $ghh/0000/etc 2>/dev/null
-
+sleep 1; cd $ghh/0000/etc 2>/dev/null 
+##
 for i in "${CHECKED[@],,}"; 
-do "$i"="true" >/dev/null ; 
+do "$i"="true" >ops1 ; 
 done 
 source ./enter.sh 
 # export "${CHECKED[@]=y}"
