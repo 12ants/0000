@@ -53,6 +53,8 @@ esac
 export EDITOR='micro' 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'  
 ##
+alias ee="echo "
+alias own="chown $SUDO_USER: $ghh -R; chmod 775 $ghh -R " ; 
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
@@ -82,7 +84,8 @@ if [ -f /etc/balias.sh ]; then . /etc/balias.sh; fi
 ####
 #### Welcome screen
 ####
-cools() {
+coolor() {
+    echo;
     for fg_color in {0..7}; do
         set_foreground=$(tput setaf $fg_color)
         for bg_color in {0..7}; do
@@ -91,7 +94,7 @@ cools() {
             printf ' F:%s B:%s ' $fg_color $bg_color
         done
         echo $(tput sgr0)
-    done
+    done; echo;
 }
 echo;
 greet

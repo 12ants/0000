@@ -35,15 +35,16 @@ if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo -e "$ll$c2 
 ##
 ghh="/home/$SUDO_USER/gh";
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh"; export ghh="$ghh";
-mkdir $ghh -p -m -775 2>/dev/null; 
-mkdir $ghh/bups0000 -p -m -775 2>/dev/null; 
-alias ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R " ; 
-ghown; 
+mkdir $ghh -p -m -775 2>/dev/null ; 
+mkdir $ghh/bups0000 -p -m -775 2>/dev/null ; 
+alias ghown="chown $SUDO_USER: $ghh -R; chmod 775 $ghh -R " ; 
+alias own="chown $SUDO_USER: $ghh -R; chmod 775 $ghh -R " ; 
+ghown 
 # $own; $mod; #### put back!!!!!
 cd $ghh; 
 rm $ghh/0000 -R 2>/dev/null
 git clone https://github.com/12ants/0000 > /dev/null 2>&1
-$ghown && cd $ghh/0000;
+ghown && cd $ghh/0000;
 ## 
 bash ants_installer.sh;
 echo -e "\n\n\n\n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n\n\n\n" ;
