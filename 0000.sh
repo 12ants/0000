@@ -28,10 +28,14 @@ tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n\n\t\t  $da
 #echo -en "\t"; 
 ##
 ##
+
+
 read -n1 -ep "
 $ll$c2 Do you wish to proceed?
 $ll$c2 (new install)           $up1"$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ;
+
+
 ##
 ##
 own="chown "$SUDO_USER": /home/"$SUDO_USER" -R"; 
@@ -39,10 +43,11 @@ mod="chmod 775 /home/"$SUDO_USER" -R";
 ghh="/home/$SUDO_USER/gh"; 
 export ghh="/home/$SUDO_USER/gh"; 
 mkdir $ghh -p -m -775;
-#$own; $mod; #### put back!!!!!
+mkdir $ghh/bups0000 -p -m -775;
+$own; $mod; #### put back!!!!!
 read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh";
-cd $ghh; rm $ghh/0000 -R>/dev/null 
-git clone https://github.com/12ants/0000.git>/dev/null
+cd $ghh; rm $ghh/0000 -R >/dev/null 
+git clone https://github.com/12ants/0000.git >/dev/null 
 $own 
 $mod 
 cd $ghh/0000; bash ants_installer.sh;

@@ -99,7 +99,7 @@ function prompt_for_multiselect {
 # Usage Example
 
 OPTIONS_VALUES=($(ls ./etc/))
-#OPTIONS_LABELS=("Apple" "Microsoft" "Google")
+OPTIONS_LABELS=("cat $OPTIONS_VALUES|head" "Microsoft" "Google")
 
 for i in "${!OPTIONS_VALUES[@]}"; do
 	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"

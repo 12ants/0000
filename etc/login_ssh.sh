@@ -1,5 +1,8 @@
 #!/bin/bash
 ## login
+#
+## About: Change SSH Login-Screen.
+#
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 echo '
 

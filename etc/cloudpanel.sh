@@ -1,5 +1,8 @@
 #!/bin/bash
 ##
+## 0000/etc/cloudpanel.sh
+## About: Simply CloudPanel.io.
+####
 ##
 echo -e "\n\n\t Installing Cloudpanel... \n \n "
 curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \

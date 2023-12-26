@@ -78,7 +78,7 @@ function prompt_for_multiselect () {
         for option in "${options[@]}"; do
             local prefix="    [ ]"
             if [[ ${selected[idx]} == true ]]; then
-              prefix="    [x]"
+              prefix="    [$green*$re]"
             fi
 
             cursor_to $(($startrow + $idx))
@@ -112,8 +112,8 @@ echo -e "\n\n\n\n"
 # Usage Example
 
 OPTIONS_VALUES1=($(ls ./etc/))
-
-OPTIONS_VALUES=(${OPTIONS_VALUES1[@]//.*/ })
+OPTIONS_VALUES2=(${OPTIONS_VALUES1[@]^})
+OPTIONS_VALUES=(${OPTIONS_VALUES2[@]//.*/ })
 
 
 #OPTIONS_LABELS=("Apple" "Microsoft" "Google")
@@ -130,21 +130,25 @@ for i in "${!SELECTED[@]}"; do
 	fi
 done
 
-echo -e "\n\n\t You chose: \n\t ${CHECKED[@]} \n\n";
-sleep 2;
+echo -e "\n\n\t You chose: \n\t ${CHECKED[@]} \n\n\n\n";
+read -n1 -ep "
+$up1$up1$ll$c2 Do you wish to proceed? "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
+if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ; tput cup 0; source ./snips/coolors.sh;
+sleep 1;
+cd $ghh/0000/etc 2>/dev/null
+bash ./enter.sh 
 # export "${CHECKED[@]=y}"
 ##
 ##
 for i in "${CHECKED[@]}"; 
 do 
-echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 2; 
-
+echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 1; 
 bash "./etc/$i.sh";
-echo "gg"; sleep 2;
+echo "gg"; sleep 1; source ./snips/coolors.sh;
 done
 echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
 tput cuu 8; tput ed; 
-source ./snips/timer.sh
+source ./snips/timer.sh; source ./snips/coolors.sh; 
 echo -e "byeeeeeeeee"
 reboot
 ##

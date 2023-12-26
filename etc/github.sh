@@ -1,5 +1,8 @@
 #!/bin/bash
-
+##
+## 0000/etc/github.sh
+## About: GitHub
+##
 echo "##################################"
 echo "## GITHUB CREDENTIALS INSTALLER ##"
 echo "##################################"

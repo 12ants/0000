@@ -1,10 +1,13 @@
-
-#/bin/bash
+#!/bin/bash
+##
+## 0000/etc/grub.sh
+## About: Grub sh script.
+##
 #grub
 mkdir -p -m 775 /boot/grub/ ;  cd /boot/grub/ ; 
 wget -O tard.jpg https://github.com/12ants/00/raw/main/img/tard2.jpg;
 mkdir -p -m 775 "/home/$SUDO_USER/ants/bu/";
-mv /etc/default/grub.d/* /home/$SUDO_USER/ants/bu/;
+mv /etc/default/grub.d/* $ghh/bups0000  /bu/;
 echo '
 GRUB_BACKGROUND="/boot/grub/tard.jpg"
 GRUB_GFXMODE=auto
