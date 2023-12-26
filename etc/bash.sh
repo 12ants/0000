@@ -19,9 +19,9 @@ own
 ##
 ##
 
-mv  /etc/skel/.bashrc $ghh/bups0
-echo "source /etc/bash.bashrc " >> /etc/skel/.bashrc
+mv  /etc/skel/.bashrc $ghh/bups0000
+echo "source /etc/bash.bashrc " > /etc/skel/.bashrc
 ##
 
-echo -e "\n\t Copy new bash file\n\n"
+echo -e "\n\t Copy new bash file . . . . Done . . . .\n\n"
 ##

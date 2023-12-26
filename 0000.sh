@@ -33,11 +33,11 @@ if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"
 ## $ghh _ NEW FOLDER _
 ##
 ghh="/home/$SUDO_USER/gh";
-export ghh="/home/$SUDO_USER/gh";
-read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh";
-ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R " ;
-mkdir $ghh -p -m -775;
-mkdir $ghh/bups0000 -p -m -775;
+read -ep "$ll$c2 Github folder:  " -i "$ghh" "ghh"; export ghh="$ghh";
+mkdir $ghh -p -m -775 2>/dev/null; 
+mkdir $ghh/bups0000 -p -m -775 2>/dev/null; 
+export ghown="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R ";
+ghown 2>/dev/null;
 # $own; $mod; #### put back!!!!!
 cd $ghh; rm $ghh/0000 -R >/dev/null
 git clone https://github.com/12ants/0000 > /dev/null 2>&1

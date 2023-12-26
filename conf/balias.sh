@@ -26,17 +26,19 @@ alias "pp"='psp; read -n1 -ep "$c2 Install $cyanb$bold$ii$re? ["$green"Y"$re"/"$
 ##
 alias "qw"="fortune|lolcat -a& disown;"
 ##
-alias rain='
+#alias rain='
 #!/bin/bash ## RAINBOW-TEXT ## Example usage: rb "Yo yo yo " 
-rb() { echo;echo; colors=("31" "33" "32" "36" "34" "35")
+funtion rb () { 
+    echo; colors=("31" "33" "32" "36" "34" "35")
 for ((i=0; i<${#1}; i++)); do char="${1:i:1}"; color_index=$((i % ${#colors[@]}))
-color_code="${colors[$color_index]}"; echo -en "\033[${color_code}m${char}\033[0m"; done; echo;echo;echo; } '
+color_code="${colors[$color_index]}"; echo -en "\033[${color_code}m${char}\033[0m"; done; echo;echo; 
+    }
 ##
 alias rainbow='echo;echo;echo; tput cuu 2; read -ep "$c2 " "rainbow"; rb "$rainbow";' 
 ##
-alias "gg"='psp; read -ep "$c2 google: $cyan" -i "$gggg" "gggg"; 
-www-browser "google.com/search?q=$gggg">/dev/null& disown; tput cuu1; echo "$c2 $rev$gggg"; echo -e "$re \n\n"; '
-##
+#alias "gg"='psp; read -ep "$c2 google: $cyan" -i "$gggg" "gggg"; 
+#www-browser "google.com/search?q=$gggg">/dev/null& disown; tput cuu1; echo "$c2 $rev$gggg"; echo -e "$re \n\n"; '
+## 
 ##
 alias "ff"='psp; read -ep "$c2 "$rev"new folder?$re " -i "$PWD/" "folder"; mkdir -p $folder -m 775; chown "$SUDO_USER":"$USER" "$folder"; 
 cd $folder; echo -e "\n\t $cyan$bold> $pink$PWD/$cyan <$re\n\t * * * *\n"; ll -caklup;'
@@ -88,3 +90,4 @@ alias "fakta"='neofetch 2>/dev/null '
 alias "gg"='psp read -ep "$c2 " -i "google: " "google"; links2 "https://www.google.com/search?q=$google"'
 alias "coolors"=". $ghh/0000/snips/coolors.sh"
 alias "zz"="ranger 2>/dev/null" 
+alias 12_own="chown "$SUDO_USER": $ghh -R; chmod 775 $ghh -R ";
