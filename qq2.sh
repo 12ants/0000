@@ -139,7 +139,7 @@ sleep 1;
 cd $ghh/0000/etc 2>/dev/null
 
 for i in "${CHECKED[@],,}"; 
-do "$i"="true">/dev/null; 
+do "$i"="true" >/dev/null ; 
 done 
 source ./enter.sh 
 # export "${CHECKED[@]=y}"
@@ -148,13 +148,12 @@ source ./enter.sh
 for i in "${CHECKED[@],,}"; 
 do 
 echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 1; 
-bash "$i.sh";
-echo "gg"; sleep 1; 
-source $ghh/0000/snips/coolors.sh;
+source "$i.sh" ;
+echo -e "\n\t gg \n\n"; sleep 1; 
+source $ghh/0000/snips/coolors.sh; sleep 1; 
 done
 echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
-tput cuu 8; tput ed; 
-source $ghh/0000/snips/timer.sh; source $ghh/0000/snips/coolors.sh; 
+tput cup 0; source $ghh/0000/snips/coolors.sh; source $ghh/0000/snips/coolors.sh;  tput cuu 6; echo;echo;echo; tput cuu 2;source $ghh/0000/snips/timer.sh; source $ghh/0000/snips/coolors.sh; 
 echo -e "byeeeeeeeee"
 
 ##

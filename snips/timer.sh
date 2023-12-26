@@ -4,7 +4,7 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 hour=0
-min=0
+min=1
 sec=11
 tput civis
 echo -ne "${GREEN}"
