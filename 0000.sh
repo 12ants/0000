@@ -25,8 +25,8 @@ left2=$(tput cub 2) up1=$(tput cuu1) dash="$cyan -------------------------------
 ##
 ##
 #clear;
-tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n
-\n\n\t\t $dash\n\t\t Welcome to $cyan 12ants $re bash-improver! \n\t\t $dash\n";
+tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n
+\n\t\t $dash\n\t\t  Welcome to $cyan 12ants $re bash-improver! \n\t\t $dash\n";
 read -n1 -ep "$ll$c2 Do you wish to proceed?
 $ll$c2 (new install)           $up1"$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn";
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo -e "$ll$c2 OK \t\t"; fi ;
