@@ -7,7 +7,7 @@ if [ $UID != 0 ]; then echo -e " \n\n $ll This script must be run as root... try
 sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf;
 ## - Auto root login for admins
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
-echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/ants;
+echo -e "$SUDO_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ants;
 ##
 # snap install lolcat &>/dev/null & disown; tput cuu 2; tput ed
 # apt update|lolcat -F .01 -s 111 -p 11 -d 22; apt upgrade -y --install-recommends|lolcat -F .001 -s 111 -p 11 -d 22;
@@ -27,7 +27,7 @@ left2=$(tput cub 2) up1=$(tput cuu1) dash="$cyan -------------------------------
 #clear;
 tput cup 0; tput ed; echo -e " \n\n\t$blink ¯\(ツ)/¯$re \n\n\n\n\n
 \n\t\t $dash\n\t\t  Welcome to $cyan 12ants $re bash-improver! \n\t\t $dash\n";
-read -n1 -ep "$ll$c2 Do you wish to proceed?
+read -n1 -ep "$ll$c2 Do you wish to proceed?    
 $ll$c2 (new install)           $up1"$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn";
 if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo -e "$ll$c2 OK \t\t"; fi ;
 ##
@@ -43,11 +43,12 @@ $ghown
 # $own; $mod; #### put back!!!!!
 cd $ghh; 
 rm $ghh/0000 -R 2>/dev/null
-git clone https://github.com/12ants/0000 > /dev/null 2>&1
-$ghown && cd $ghh/0000;
+git clone https://github.com/12ants/0000 > /dev/null 2>&1 
+echo "gg";
+$ghown; cd $ghh/0000;
 ## 
-bash ants_installer.sh;
-echo -e "\n\n\n\n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n $dash GG $dash \n\n\n\n" ;
+bash ./ants_installer.sh;
+echo -e "\n\n\n\n $dash GG$dash \n $dash GG$dash \n $dash GG$dash \n $dash GG$dash \n $dash GG$dash \n $dash GG$dash \n\n\n\n" ;
 ##
 ##
 
