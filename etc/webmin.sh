@@ -23,8 +23,8 @@ tput cuu 8;
 ##
 cd $ghh; mkdir ./webmin/i -p -m 775; 
 cd ./webmin/i; wget -OO.tar.gz https://download.webmin.com/devel/tarballs/webmin-current.tar.gz; tar -xf O.tar.gz --strip-components=1;
-cp $ghh/0000/conf/webminsetup.sh ./setup.sh -b;
- ./setup.sh /usr/local/webmin ; 
+# cp $ghh/0000/conf/webminsetup.sh ./setup.sh -b;
+./setup.sh /usr/local/webmin 
 echo gg
 ##
 ##
