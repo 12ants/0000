@@ -1,8 +1,9 @@
 #!/bin/bash
-# from SO: https://stackoverflow.com/a/54261882/317605 (by https://stackoverflow.com/users/8207842/dols3m)
+reset ; 
 tput cup 0;
 tput ed;
 echo "
+
   ------------------------------------------
   ------------ $green hello $re ---------------------
   ------------------------------------------ 
@@ -116,7 +117,7 @@ OPTIONS_VALUES2=(${OPTIONS_VALUES1[@]^})
 OPTIONS_VALUES=(${OPTIONS_VALUES2[@]//.*/ })
 
 
-#OPTIONS_LABELS=("Apple" "Microsoft" "Google")
+OPTIONS_LABELS=("Apple" "Microsoft" "Google")
 
 for i in "${!OPTIONS_VALUES[@]}"; do
 	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
@@ -133,22 +134,27 @@ done
 echo -e "\n\n\t You chose: \n\t ${CHECKED[@]} \n\n\n\n";
 read -n1 -ep "
 $up1$up1$ll$c2 Do you wish to proceed? "$dim"["$re$bold"Y"$dim"/"$re$bold"n"$re$dim"] $re" "yn"; 
-if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ; tput cup 0; source ../snips/coolors.sh;
+if [ "$yn" != "${yn#[Nn]}" ]; then echo "$c2 nope";exit 1; else echo "$ll$c2 OK"; fi ; tput cup 0; source $ghh/0000/snips/coolors.sh;
 sleep 1;
 cd $ghh/0000/etc 2>/dev/null
+
+for i in "${CHECKED[@],,}"; 
+do "$i"="true">/dev/null; 
+done 
 source ./enter.sh 
 # export "${CHECKED[@]=y}"
 ##
 ##
-for i in "${CHECKED[@]}"; 
+for i in "${CHECKED[@],,}"; 
 do 
 echo -e "\n\t\t $c2 Installing $i   \n\n"; sleep 1; 
-bash "./etc/$i.sh";
-echo "gg"; sleep 1; source ../snips/coolors.sh;
+bash "$i.sh";
+echo "gg"; sleep 1; 
+source $ghh/0000/snips/coolors.sh;
 done
 echo -e "\n\n\n\n\t\t$c2 All done\n\n\n\n";
 tput cuu 8; tput ed; 
-source ../snips/timer.sh; source ../snips/coolors.sh; 
+source $ghh/0000/snips/timer.sh; source $ghh/0000/snips/coolors.sh; 
 echo -e "byeeeeeeeee"
 
 ##

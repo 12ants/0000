@@ -2,7 +2,7 @@
 ## /gh/0000/etc/enter.sh
 #
 #  
-if [ grep -e github ${CHECKED[*] }
+if [ ${CHECKED[] }
 if $
 printf "Webmin - Login name (default aaaa): "
 	if [ "$login" = "" ]; then
