@@ -20,7 +20,7 @@ export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
 grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) purple=$(tput setaf 5) \
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
-left2=$(tput cub 2) up1=$(tput cuu1) dash="$cyan ----------------------------------$re" c2="$cyan  --$re" ll=$(echo -e " \t\t ") \
+left2=$(tput cub 2) up1=$(tput cuu1) dash="$cyan ----------------------------------$re" c2="$cyan  --$re" ll=$(echo -e "\t\t") \
 ##
 ##
 #clear;
